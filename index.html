@@ -1,255 +1,821 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sudhesh Madushanka - Document Controller & Administrative Professional</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .initials {
-      width: 120px;
-      height: 120px;
-      background-color: #2e7d32;
-      color: white;
-      font-size: 48px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-    }
-    h1 {
-      margin: 10px 0;
-      color: #2e7d32;
-    }
-    .title {
-      font-size: 1.4em;
-      color: #f57c00;
-      margin: 10px 0;
-    }
-    .contact {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-    .about {
-      text-align: justify;
-      margin-bottom: 40px;
-      font-size: 1.1em;
-    }
-    h2 {
-      color: #2e7d32;
-      border-bottom: 2px solid #2e7d32;
-      padding-bottom: 8px;
-      margin-top: 50px;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-    .skill-tag {
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      border: 1px solid #a5d6a7;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    .experience-item {
-      margin-bottom: 30px;
-    }
-    .experience-item h3 {
-      margin: 5px 0;
-      color: #f57c00;
-    }
-    .experience-item p {
-      margin: 5px 0;
-    }
-    .cert-list li {
-      margin: 15px 0;
-      font-size: 1.1em;
-    }
-    .button {
-      display: block;
-      width: 220px;
-      margin: 40px auto;
-      padding: 15px;
-      background-color: #2e7d32;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 1.2em;
-      border-radius: 50px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background-color: #1b5e20;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #777;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudhesh Madushanka - Document Controller & Administrative Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styles - All in one file */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            background-color: #e3f2fd;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #3498db;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #3498db;
+            border-color: #3498db;
+        }
+
+        .btn-secondary:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 100px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections Common */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: white;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .experience-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #3498db;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .exp-icon {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .experience-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .career-timeline {
+            margin-top: 50px;
+        }
+
+        .career-timeline h3 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .timeline-category {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .timeline-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-category h4 i {
+            color: #3498db;
+        }
+
+        .timeline-category-duration {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .timeline-category-role {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .timeline-item.detailed {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e3f2fd;
+        }
+
+        .timeline-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .timeline-header h4 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 5px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .timeline-date {
+            color: #3498db;
+            font-weight: 500;
+            background-color: #e3f2fd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .timeline-place {
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        .timeline-role {
+            color: #555;
+            font-style: italic;
+        }
+
+        .role-progression {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .role-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .role-item:last-child {
+            border-bottom: none;
+        }
+
+        .role-title {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .role-duration {
+            color: #3498db;
+            font-size: 14px;
+        }
+
+        .responsibilities {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e3f2fd;
+        }
+
+        .responsibilities h5 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .responsibilities ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .responsibilities li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Experience Stats */
+        .experience-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 40px;
+            opacity: 0.9;
+        }
+
+        .stat-content h3 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .stat-content p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background-color: #f8f9fa;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .certification-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .certification-category h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e3f2fd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .certification-category h3 i {
+            color: #3498db;
+        }
+
+        .certifications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .certification-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #3498db;
+        }
+
+        .certification-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-item i {
+            font-size: 24px;
+            color: #3498db;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .certification-item h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 18px;
+            border: none;
+            padding: 0;
+        }
+
+        .cert-issuer {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .cert-date {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .cert-details {
+            color: #555;
+            font-size: 14px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
+        }
+
+        /* Certifications Summary */
+        .certifications-summary {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            border-radius: 10px;
+            padding: 30px;
+            color: white;
+        }
+
+        .certifications-summary h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .stat-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #3498db;
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            background-color: #3498db;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .timeline-date {
+                align-self: flex-start;
+            }
+            
+            .role-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .experience-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .experience-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Timeline animation styles */
+        .timeline-item.detailed {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .timeline-item.detailed.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Alternate animation for even items */
+        .timeline-item.detailed:nth-child(even) {
+            transform: translateX(20px);
+        }
+
+        .timeline-item.detailed:nth-child(even).animate-in {
+            transform: translateX(0);
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">SM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
 
-  <div class="container">
-    <div class="header">
-      <div class="initials">SM</div>
-      <h1>Sudhesh Madushanka Samarakoon</h1>
-      <div class="title">Document Controller | Administrative Assistant | Office Administrator</div>
-      <div class="contact">
-        Al Hamra, Al Jazeera, Ras Al Khaimah, UAE | +971 56 884 0769 | sudheshmadushanka@gmail.com <br>
-        LinkedIn: <a href="https://linkedin.com/in/sudhesh-madushanka-588332284">linkedin.com/in/sudhesh-madushanka-588332284</a> <br>
-        Visa Status: Employment Visa | Availability: Immediately
-      </div>
-    </div>
-
-    <div class="about">
-      <h2>Profile Summary</h2>
-      <p>Highly experienced Document Control and Administrative Professional with 19 years of proven expertise at the Road Development Authority (RDA), Sri Lanka. Specialized in documentation management, filing systems, records control, data entry, and office coordination. Additional technical background in engineering draughtsmanship and construction project documentation. Demonstrated ability to maintain meticulous document workflows, ensure compliance with organizational protocols, and manage critical administrative functions in government and technical environments.</p>
-    </div>
-
-    <h2>Core Competencies</h2>
-    <div class="skills">
-      <div class="skill-tag">Document Control & Management</div>
-      <div class="skill-tag">Filing Systems & Records Management</div>
-      <div class="skill-tag">Documentation Workflows & Archiving</div>
-      <div class="skill-tag">Technical Documentation & Drawings</div>
-      <div class="skill-tag">Data Entry & Database Management</div>
-      <div class="skill-tag">MS Word & Excel Proficiency</div>
-      <div class="skill-tag">Report Preparation & Correspondence</div>
-      <div class="skill-tag">Quality Control & Compliance</div>
-      <div class="skill-tag">Office Administration & Coordination</div>
-      <div class="skill-tag">Stakeholder Communication</div>
-      <div class="skill-tag">Time Management & Attention to Detail</div>
-    </div>
-
-    <h2>Professional Experience</h2>
-    <div class="experience">
-      <div class="experience-item">
-        <h3>Road Development Authority (RDA) – Sri Lanka</h3>
-        <p>Administrative Clerk / Document Controller | 2004 – 2023 (19 Years)</p>
-        <ul>
-          <li>Established and maintained comprehensive documentation systems including filing, archiving, indexing, and retrieval of official records, technical documents, and correspondence.</li>
-          <li>Controlled document workflows ensuring proper versioning, distribution, and tracking of all official documents.</li>
-          <li>Managed document registers, logs, and databases with meticulous accuracy.</li>
-          <li>Handled technical drawings, engineering documents, and construction project documentation.</li>
-          <li>Ensured compliance with government documentation standards and quality control procedures.</li>
-          <li>Coordinated document review and approval processes with engineers and officials.</li>
-          <li>Executed accurate data entry, prepared reports, memos, and correspondence.</li>
-          <li>Handled public inquiries, communications, and supported senior staff with scheduling.</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>Hotel Blue Mount & Restaurant – Kandy, Sri Lanka</h3>
-        <p>Waiter / Assistant Waiter / Trainee Waiter | 2013 – Current (as of 2023)</p>
-        <ul>
-          <li>Greeted and escorted customers to tables.</li>
-          <li>Served food according to prescribed standards.</li>
-          <li>Presented menu and provided detailed information when asked.</li>
-          <li>Prepared alcohol or non-alcohol beverages for restaurant patrons.</li>
-          <li>Took orders, picked up food from kitchen, and served on tables.</li>
-          <li>Cleared up finished dishes and kept tables neat.</li>
-          <li>Delivered cheques and handled payments.</li>
-          <li>Checked assigned tables regularly for positive guest experience.</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>Radisson Hotel Kandy – Sri Lanka</h3>
-        <p>Trainee in Food and Beverage Department | December 2023 – May 2024</p>
-        <ul>
-          <li>Trained as a part-time worker in Food and Beverage Service.</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>Taisei Corporation – Nuwara Eliya Water Supply Project</h3>
-        <p>Practical Trainee | November 2002 – February 2003</p>
-        <ul>
-          <li>Gained hands-on experience in construction documentation and technical processes including building & pipe bridge constructions, pressure testing, surveying, and pipe laying (DCIP & PVC).</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2>Training & Certifications</h2>
-    <ul class="cert-list">
-      <li>National Certificate in Food and Beverage Service (Assistant Steward) - NVQ Level 3, Vocational Training Authority of Sri Lanka | Effective Date: 16/07/2023</li>
-      <li>Certificate Course in Tamil Language (Credit Pass) - Skills Development Fund Ltd (SDFL) | February – July 2011</li>
-      <li>Time Management & Productivity Workshop - Sanit International (Pvt) Ltd | May 2012</li>
-      <li>Clerical Officers Training Programme on Rules and Regulations, Office Procedures, Duties, and Public Relations - Road Development Authority (RDA) | March 2005 (Dates: 2005.03.11 & 2005.03.12)</li>
-      <li>Entrepreneur Development Training Programme on New Business Creation - Vocational Training Authority of Sri Lanka | November – December 2003</li>
-    </ul>
-
-    <h2>Education</h2>
-    <ul>
-      <li>National Certificate in Engineering Draughtsmanship - Technical College, Nuwara Eliya | 2002 (Index No: 0207234)<br>Covering: Engineering Mathematics, Geometrical & Mechanical Drawing, Mechanical & Electrical Engineering Fundamentals, Building Construction, Building Services, Engineering Surveying, Engineering Materials, Builder's Quantities, Communication Studies, Construction Draughtsmanship, Structural Mechanics, Computer Aided Design.</li>
-      <li>General Certificate of Education (Ordinary Level) - Democratic Socialist Republic of Sri Lanka | 1997 (Index No: 74608568)<br>Results: Buddhism (C), Sinhala Language & Literature (C), English Language (F), Science (F), Mathematics (S), History & Social Studies (C), Music - Sinhala (C), Metal Work (S)</li>
-    </ul>
-
-    <h2>IT Skills</h2>
-    <ul>
-      <li>Microsoft Word & Excel (Proficient)</li>
-      <li>Document Management Systems</li>
-      <li>Computer Aided Design (CAD) - Basic Knowledge</li>
-      <li>Email Management & Internet Navigation</li>
-      <li>Computer Literacy & Office Software</li>
-      <li>Fast & Accurate Typing</li>
-      <li>Data Entry & Database Management</li>
-    </ul>
-
-    <h2>Key Strengths</h2>
-    <ul>
-      <li>19 Years of Document Control Experience</li>
-      <li>Technical Documentation Skills</li>
-      <li>Attention to Detail</li>
-      <li>Organizational Skills</li>
-      <li>Compliance Oriented</li>
-      <li>Reliable & Professional</li>
-    </ul>
-
-    <h2>Personal Details</h2>
-    <ul>
-      <li>Nationality: Sri Lankan</li>
-      <li>Languages: Sinhala (Native), English (Good), Tamil (Basic)</li>
-      <li>Date of Birth: October 21, 1980</li>
-      <li>Marital Status: Married</li>
-      <li>Current Location: Al Hamra, Al Jazeera, Ras Al Khaimah, UAE</li>
-    </ul>
-
-    <a href="mailto:sudheshmadushanka@gmail.com?subject=Job%20Opportunity" class="button">Get In Touch</a>
-
-    <footer>
-      Based in UAE • Available for new opportunities
-    </footer>
-  </div>
-
-</body>
-                                                                                            </html>
-
+    <!-- Hero Section -->
+   
+                                                        
