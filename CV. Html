@@ -1,7 +1,157 @@
-<!-- Add this in your existing index.html file -->
-<div style="text-align: center; margin: 50px;">
-    <a href="cv.html" style="padding: 15px 30px; background: #3498db; color: white; 
-    text-decoration: none; border-radius: 5px; font-size: 18px;">
-        📄 View My CV
-    </a>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SUDESH MADUSHANKA SAMARAKOON - CV</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 25px; border-left: 4px solid #3498db; padding-left: 10px; }
+        h3 { color: #34495e; margin-top: 20px; }
+        .contact-info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .section { margin-bottom: 25px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .highlight { background: #e8f4fc; padding: 10px; border-radius: 5px; }
+        .cert-item { margin-bottom: 15px; padding-left: 10px; border-left: 3px solid #7f8c8d; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .two-column { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <h1>SUDESH MADUSHANKA SAMARAKOON</h1>
+    
+    <div class="contact-info">
+        <strong>Administrative Assistant | Document Controller | Office Clerk</strong><br><br>
+        <strong>📍 Address:</strong> Ras Al Khaimah, United Arab Emirates<br>
+        <strong>📞 Phone:</strong> +971 56 884 0769<br>
+        <strong>✉ Email:</strong> sudheshmadushanka@gmail.com<br>
+        <strong>📋 Visa Status:</strong> Employment Visa<br>
+        <strong>✅ Availability:</strong> Immediately Available<br>
+        <strong>🏢 RAK CERAMICS File No:</strong> 99018571<br>
+        <strong>🌐 Portfolio:</strong> sudeshmadushanka-blip.github.io/portfolio-website-
+    </div>
+    
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Dedicated Document Controller and Administrative Professional with 19+ years of proven experience at the Road Development Authority (RDA), Sri Lanka. Expert in document management, filing systems, records control, technical drawings, data entry, compliance, and office coordination in government and construction environments. Currently working at RAK CERAMICS as a Helper, seeking to transition into a Document Controller or Administrative role. Immediately available with UAE Employment Visa.</p>
+    </div>
+    
+    <div class="section">
+        <h2>CORE COMPETENCIES</h2>
+        <div class="two-column">
+            <div>
+                <h3>Document Management</h3>
+                <ul>
+                    <li>Document Control & Records Management</li>
+                    <li>Filing Systems & Archiving</li>
+                    <li>Technical Documentation</li>
+                    <li>Data Entry & Database Management</li>
+                    <li>Quality Control & Compliance</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Administrative Skills</h3>
+                <ul>
+                    <li>Office Administration & Coordination</li>
+                    <li>MS Office (Word, Excel, Outlook)</li>
+                    <li>Report Writing & Correspondence</li>
+                    <li>Stakeholder Communication</li>
+                    <li>Time Management & Productivity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <h3>RAK CERAMICS – Ras Al Khaimah, UAE</h3>
+        <p><strong>Helper</strong> | August 2024 – Present</p>
+        <ul>
+            <li>Currently supporting production operations in a large-scale manufacturing environment</li>
+            <li>Demonstrating strong work ethic, adaptability, and teamwork skills</li>
+            <li>Eager to transition into administrative or document control role within the organization</li>
+        </ul>
+        
+        <h3>ROAD DEVELOPMENT AUTHORITY (RDA) – Sri Lanka</h3>
+        <p><strong>Administrative Clerk / Document Controller</strong> | November 2004 – September 2023 (19 Years)</p>
+        <p><strong>Key Responsibilities:</strong></p>
+        <ul>
+            <li>Managed comprehensive document control systems for national road development projects</li>
+            <li>Established and maintained physical and digital filing systems for technical drawings and engineering documents</li>
+            <li>Handled data entry for multiple databases, registers, and government records</li>
+            <li>Prepared official correspondence, reports, and government documentation</li>
+            <li>Coordinated with engineers, supervisors, and government officials</li>
+            <li>Ensured compliance with government regulations and documentation standards</li>
+            <li>Managed public inquiries and customer service interactions</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>EDUCATION</h2>
+        <div class="cert-item">
+            <strong>G.C.E. Ordinary Level (O/L)</strong><br>
+            <em>Welimada Central College, Sri Lanka</em><br>
+            Completed: 1997<br>
+            Subjects: Buddhism (C), Sinhala Language & Literature (C), Music (C), Metalwork (S), etc.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>CERTIFICATIONS & TRAINING</h2>
+        
+        <div class="cert-item">
+            <strong>National Certificate in Food and Beverage Service (Assistant Steward) - NVQ Level 3</strong><br>
+            Vocational Training Authority (VTA), Sri Lanka | July 2023<br>
+            Certificate No: 10321631
+        </div>
+        
+        <div class="cert-item">
+            <strong>Certificate Course in Tamil Language (Credit Pass)</strong><br>
+            Skills Development Fund Ltd, Sri Lanka | July 2011<br>
+            Duration: February 2011 - July 2011
+        </div>
+        
+        <div class="cert-item">
+            <strong>Time Management & Productivity Workshop</strong><br>
+            SANIT International (PVT) Limited | May 2012<br>
+            Focus: Goal setting, productivity improvement, work prioritization
+        </div>
+        
+        <div class="cert-item">
+            <strong>Clerical Officers Training Programme</strong><br>
+            Road Development Authority (RDA), Sri Lanka | March 2005<br>
+            Topics: Rules & regulations, office procedures, duties & responsibilities, public relations
+        </div>
+        
+        <div class="cert-item">
+            <strong>Entrepreneur Development Training Programme on New Business Creation</strong><br>
+            Vocational Training Authority (VTA), Sri Lanka | November-December 2003<br>
+            Asian Development Bank Funded Self-Employment Promotion Initiative
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>LANGUAGES</h2>
+        <ul>
+            <li><strong>Sinhala:</strong> Native</li>
+            <li><strong>English:</strong> Good (Written & Spoken)</li>
+            <li><strong>Tamil:</strong> Good (Certified Credit Pass)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>PERSONAL DETAILS</h2>
+        <ul>
+            <li><strong>Nationality:</strong> Sri Lankan</li>
+            <li><strong>Date of Birth:</strong> October 21, 1980</li>
+            <li><strong>Marital Status:</strong> Married</li>
+            <li><strong>Current Location:</strong> Ras Al Khaimah, UAE</li>
+        </ul>
+    </div>
+    
+    <div class="highlight">
+        <p><strong>Immediately available for employment.</strong> Ready to contribute 19+ years of document control and administrative expertise to a professional organization in the UAE. Can provide references upon request.</p>
+    </div>
+</body>
+</html>
