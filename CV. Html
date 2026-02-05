@@ -1,0 +1,7 @@
+<!-- Add this in your existing index.html file -->
+<div style="text-align: center; margin: 50px;">
+    <a href="cv.html" style="padding: 15px 30px; background: #3498db; color: white; 
+    text-decoration: none; border-radius: 5px; font-size: 18px;">
+        📄 View My CV
+    </a>
+</div>
