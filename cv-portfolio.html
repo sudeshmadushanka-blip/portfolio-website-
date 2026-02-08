@@ -21,10 +21,76 @@
         padding: 20px;
     }
     
+    /* Header Section */
+    .header {
+        max-width: 514px;
+        margin: 0 auto 40px;
+        text-align: center;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .header-logo {
+        font-size: 42px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .header-name {
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+    
+    .header-title {
+        font-size: 18px;
+        color: #7f8c8d;
+        margin-bottom: 20px;
+    }
+    
+    .header-description {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.7;
+    }
+    
+    .header-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .btn-primary {
+        background: #3498db;
+        color: white;
+    }
+    
+    .btn-secondary {
+        background: #2c3e50;
+        color: white;
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
     /* CV Section - 514px Width */
     #cv-details {
-        padding: 50px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 30px 0;
     }
     
     .cv-container {
@@ -111,9 +177,17 @@
             padding: 10px;
         }
         
-        .cv-container {
+        .header, .cv-container {
             max-width: 95%;
             padding: 25px 20px;
+        }
+        
+        .header-buttons {
+            flex-direction: column;
+        }
+        
+        .btn {
+            width: 100%;
         }
         
         .cv-section h3 {
@@ -132,6 +206,21 @@
     <title>Sudesh Madushanka - CV Portfolio</title>
 </head>
 <body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-logo">SM</div>
+        <h1 class="header-name">Sudesh Madushanka</h1>
+        <div class="header-title">Document Controller & Administrative Professional</div>
+        <p class="header-description">
+            19 years of proven excellence in documentation management, office administration, and technical coordination. 
+            Now based in UAE and ready to bring expertise to your organization.
+        </p>
+        <div class="header-buttons">
+            <button class="btn btn-primary">Get In Touch</button>
+            <button class="btn btn-secondary">View Experience</button>
+        </div>
+    </div>
+    
     <!-- ===== CV DETAILS SECTION - 514px Width ===== -->
     <section id="cv-details">
         <div class="cv-container">
@@ -180,5 +269,16 @@
         </div>
     </section>
     <!-- ===== CV SECTION END ===== -->
+    
+    <script>
+    // Simple button functionality
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+        document.getElementById('cv-details').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    document.querySelector('.btn-secondary').addEventListener('click', function() {
+        document.querySelector('.cv-section:nth-child(2)').scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
 </body>
 </html>
