@@ -3,809 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudesh Madushanka - Document Controller & Administrative Professional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Sudesh Madushanka - Professional Portfolio</title>
     <style>
-        /* CSS Styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
         
         body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6; /* මෙය දැනටමත් ඇත */
-    color: #333;
-    background-color: #f8f9fa;
-    font-size: 15px; /* මෙය අලුතින් එකතු කරන ලදී */
-}
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
         
         .container {
+            max-width: 800px;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
         }
         
-        /* Navigation */
-        nav {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        header {
+            background: linear-gradient(135deg, #1a3a8f, #2d5cc2);
+            color: white;
+            padding: 40px 20px;
         }
         
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #2c3e50;
-            background-color: #e3f2fd;
-            width: 60px;
-            height: 60px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li { margin-left: 30px; }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover { color: #3498db; }
-        
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #3498db;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 80px 0;
-        }
-        
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            color: #2c3e50;
+        h1 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
-        .hero h2 {
-            font-size: 22px;
-            color: #3498db;
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
             margin-bottom: 20px;
-            font-weight: 500;
         }
         
-        .hero p {
-            font-size: 17px;
-            color: #555;
-            margin-bottom: 25px;
-            max-width: 600px;
+        .availability {
+            background: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
         }
         
-        .hero-buttons {
+        .buttons {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
         }
         
         .btn {
-            padding: 12px 28px;
-            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #1a3a8f;
+            color: white;
             text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            font-size: 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            justify-content: center;
+        }
+        
+        .btn:hover {
+            background: #2d5cc2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
         .btn-primary {
-            background-color: #3498db;
-            color: white;
+            background: #ff6b6b;
         }
         
         .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: #3498db;
-            border-color: #3498db;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #3498db;
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .hero-image {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        /* Photo Styles - Updated with your image */
-        .profile-photo {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            background-color: #f8f9fa;
-        }
-        
-        /* Sections */
-        section { padding: 70px 0; }
-        
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 40px;
-            font-size: 17px;
-        }
-        
-        /* Experience Section */
-        .experience { background-color: white; }
-        
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        
-        .experience-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s;
-            border-top: 4px solid #3498db;
-        }
-        
-        .experience-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-        }
-        
-        .exp-icon {
-            font-size: 38px;
-            color: #3498db;
-            margin-bottom: 18px;
-        }
-        
-        .experience-card h3 {
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-size: 22px;
-        }
-        
-        .experience-card p {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        /* Responsibilities */
-        .responsibilities {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 2px solid #e3f2fd;
-        }
-        
-        .responsibilities h5 {
-            color: #2c3e50;
-            margin-bottom: 18px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-        
-        .responsibilities ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .responsibilities li {
-            padding: 12px 0 12px 45px;
-            position: relative;
-            margin-bottom: 10px;
-            color: #555;
-            font-size: 15px;
-            line-height: 1.5;
-            border-bottom: 1px dashed #e0e0e0;
-            background-color: #fdfdfd;
-            border-radius: 6px;
-        }
-        
-        .responsibilities li:before {
-            content: "✓";
-            position: absolute;
-            left: 15px;
-            top: 12px;
-            color: #3498db;
-            font-weight: bold;
-            font-size: 18px;
-            background-color: #e3f2fd;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .responsibilities li:last-child {
-            border-bottom: none;
-        }
-        
-        /* Timeline */
-        .timeline-category {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 5px solid #3498db;
-        }
-        
-        .timeline-category h4 {
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .timeline-category h4 i { color: #3498db; }
-        
-        .timeline-category-duration {
-            color: #3498db;
-            font-weight: 500;
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        
-        .timeline-category-role {
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: #f8f9fa;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
+            background: #ff5252;
         }
         
         .contact-info {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
         }
         
         .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item i {
-            font-size: 22px;
-            color: #3498db;
-            margin-right: 15px;
-            width: 45px;
-            height: 45px;
-            background-color: #e3f2fd;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-item h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        /* CV Section - 367px Width */
-.cv-container {
-    max-width: 367px;
-    margin: 0 auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eaeaea;
-}
-
-/* CV Sections Inside */
-.cv-section {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #ddd;
-}
-
-.cv-section:last-child {
-    border-bottom: none;
-}
-
-.cv-section h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.cv-section h4 {
-    color: #34495e;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-.cv-section p {
-    color: #555;
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-.cv-section ul {
-    padding-left: 20px;
-}
-
-.cv-section li {
-    margin-bottom: 8px;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Contact Info Special Styling */
-.contact-highlight {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #3498db;
-}
-
-.contact-highlight p {
-    margin: 8px 0;
-}
-        .contact-item p {
-            color: #555;
-            font-size: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 34px;
-            font-weight: 700;
-            color: white;
-            background-color: #3498db;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin: 0 15px;
+            color: #333;
         }
         
-        footer p {
-            margin-bottom: 20px;
-            opacity: 0.85;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 16px;
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .btn {
+                width: 100%;
+            }
+            .contact-item {
+                display: block;
+                margin: 10px 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img">
+            <h1>SUDESH MADUSHANKA SAMARAKOON</h1>
+            <div class="title">Administrative Assistant | Document Controller | Office Clerk</div>
+            <div class="availability">✅ Immediately Available</div>
+        </header>
         
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.85;
-            transition: opacity 0.3s;
-            font-size: 15px;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        .copyright {
-            font-size: 14px;
-            opacity: 0.7;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: block; }
-            .hero h1 { font-size: 34px; }
-            .hero h2 { font-size: 19px; }
-            .hero-content { padding-right: 0; margin-bottom: 30px; }
-            .hero .container { flex-direction: column; text-align: center; }
-            .hero-buttons { justify-content: center; }
-            .section-title { font-size: 30px; }
-            .experience-card { padding: 20px; }
-            .responsibilities li { padding-left: 40px; }
-            .profile-photo { width: 240px; height: 240px; }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 30px; }
-            .btn { padding: 10px 22px; font-size: 15px; }
-            .profile-photo { width: 200px; height: 200px; }
-        }
-    </style>/* CV Section - 514px Width */
-#cv-details {
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #f8f9f1 0%, #e6e6e6 100%);
-}
-
-.cv-container {
-    max-width: 514px; /* Changed to 514px */
-    margin: 0 auto;
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eaeaea;
-}
-
-.cv-section {
-    margin-bottom: 30px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #eee;
-}
-
-.cv-section:last-child {
-    border-bottom: none;
-}
-
-.cv-section h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    margin-bottom: 18px;
-    font-size: 24px;
-}
-
-.cv-section h4 {
-    color: #34495e;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 19px;
-}
-
-.cv-section p {
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-.cv-section strong {
-    color: #2c3e50;
-}
-
-.cv-section em {
-    color: #7f8c8d;
-    font-style: italic;
-}
-
-.cv-section ul {
-    padding-left: 22px;
-    margin-top: 10px;
-}
-
-.cv-section li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.contact-highlight {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 5px solid #3498db;
-}
-
-.availability-badge {
-    display: inline-block;
-    background: #27ae60;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 480px) {
-    .cv-container {
-        max-width: 95%; /* Mobile වලට 95% */
-        padding: 25px 20px;
-    }
-    
-    .cv-section h3 {
-        font-size: 22px;
-    }
-    
-    .cv-section h4 {
-        font-size: 18px;
-    }
-}
-</head><!-- ===== CV DETAILS SECTION - 515px Width ===== -->
-<section id="cv-details">
-    <div class="cv-container">
-        <!-- Professional Summary -->
-        <div class="cv-section">
-            <h3>📄 Professional Summary</h3>
-            <p>Dedicated Document Controller and Administrative Professional with <strong>19+ years</strong> of proven experience at the Road Development Authority (RDA), Sri Lanka. Expert in document management, filing systems, records control, technical drawings, data entry, compliance, and office coordination in government and construction environments.</p>
-            <p>Currently enhancing operational knowledge at <strong>RAK CERAMICS</strong> in UAE, eager to leverage extensive document control expertise in a challenging new role.</p>
+        <div class="buttons">
+            <a href="cv-portfolio.html" class="btn btn-primary">
+                📄 View Professional CV
+            </a>
+            <a href="resume.html" class="btn">
+                📊 View Other Version
+            </a>
         </div>
         
-        <!-- Work Experience -->
-        <div class="cv-section">
-            <h3>💼 Work Experience</h3>
-            
-            <h4>Operations Support Assistant</h4>
-            <p><strong>RAK CERAMICS – Ras Al Khaimah, UAE</strong></p>
-            <p><em>August 2024 – Present</em></p>
-            <ul>
-                <li>Supporting production operations in a large-scale manufacturing environment</li>
-                <li>Demonstrating strong work ethic, adaptability, and teamwork skills</li>
-                <li>Gaining hands-on experience in industrial processes and quality control</li>
-                <li>Eager to transition into administrative or document control role within the organization</li>
-            </ul>
-            
-            <h4>Administrative Clerk / Document Controller</h4>
-            <p><strong>Road Development Authority (RDA) – Sri Lanka</strong></p>
-            <p><em>November 2004 – September 2023 (19 Years)</em></p>
-            <ul>
-                <li>Managed complete documentation systems including filing, archiving, and retrieval of official records and correspondence</li>
-                <li>Executed fast and accurate data entry for multiple databases, registers, logs, and spreadsheets</li>
-                <li>Handled frontline public inquiries and customer service interactions with professionalism and courtesy</li>
-                <li>Prepared daily reports, internal memos, official letters, and government correspondence</li>
-                <li>Maintained meticulous office registers, documentation workflows, and administrative records</li>
-                <li>Coordinated effectively with engineers, supervisors, government officials, and project teams</li>
-            </ul>
-        </div>
-        
-        <!-- Contact & Availability -->
-        <div class="cv-section contact-highlight">
-            <h3>📧 Contact & Availability</h3>
-            <p>📍 <strong>Ras Al Khaimah, UAE</strong></p>
-            <p>📞 <strong>+971 56 884 0769</strong></p>
-            <p>✉️ <strong>sudeshmadushanka@gmail.com</strong></p>
-            <div class="availability-badge">✅ UAE Employment Visa (Immediately Available)</div>
+        <div class="contact-info">
+            <div class="contact-item">📍 Ras Al Khaimah, UAE</div>
+            <div class="contact-item">📞 +971 56 884 0769</div>
+            <div class="contact-item">✉️ sudeshmadushanka@gmail.com</div>
+            <div style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                UAE Employment Visa Holder • 19+ Years Experience • Document Control Specialist
+            </div>
         </div>
     </div>
-</section>
-<!-- ===== CV SECTION END ===== -->
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">SM</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Sudesh Madushanka</h1>
-                <h2>Document Controller & Administrative Professional</h2>
-                <p>19 years of proven excellence in documentation management, office administration, and technical coordination. Now based in UAE and ready to bring expertise to your organization.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Experience</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Your Photo Here -->
-                <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-photo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle">19+ years of combined administrative and hospitality experience</p>
-            
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="exp-icon"><i class="fas fa-road"></i></div>
-                    <h3>Document Control</h3>
-                    <p>19 years expertise in managing, organizing, and controlling documents at Road Development Authority ensuring compliance and accuracy.</p>
-                </div>
-                <div class="experience-card">
-                    <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3>Office Administration</h3>
-                    <p>Streamlining office operations, managing schedules, and improving organizational efficiency in government sector.</p>
-                </div>
-                <div class="experience-card">
-                    <div class="exp-icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h3>Hospitality Service</h3>
-                    <p>Professional food and beverage service experience in hotels with strong customer service skills.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-category">
-                <h4><i class="fas fa-building"></i> Road Development Authority (RDA) - Sri Lanka</h4>
-                <p class="timeline-category-duration">November 2004 - September 2023 (19 Years)</p>
-                <p class="timeline-category-role">Administrative Clerk / Document Controller</p>
-                
-                <div class="responsibilities">
-                    <h5>Key Responsibilities at RDA:</h5>
-                    <ul>
-                        <li>Established and maintained comprehensive documentation systems including filing, archiving, indexing</li>
-                        <li>Controlled document workflows ensuring proper versioning, distribution, and tracking</li>
-                        <li>Managed document registers, logs, and databases with meticulous accuracy</li>
-                        <li>Handled technical drawings, engineering documents, and construction project documentation</li>
-                        <li>Ensured compliance with government documentation standards and quality control procedures</li>
-                        <li>Coordinated document review with engineers, supervisors, and government officials</li>
-                        <li>Executed fast and accurate data entry for multiple databases and spreadsheets</li>
-                        <li>Prepared daily reports, internal memos, official letters, and government correspondence</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="timeline-category">
-                <h4><i class="fas fa-hotel"></i> Hotel Blue Mount Hotel & Restaurant</h4>
-                <p class="timeline-category-duration">October 2013 - September 2023 (10 Years)</p>
-                <p class="timeline-category-role">Waiter / Assistant Waiter / Trainee</p>
-                
-                <div class="responsibilities">
-                    <h5>Key Responsibilities at Hotel Blue Mount:</h5>
-                    <ul>
-                        <li>Greeted and escorted customers to their tables with professional etiquette</li>
-                        <li>Served food according to prescribed standards and presentation guidelines</li>
-                        <li>Presented menu and provided detailed information to customers</li>
-                        <li>Prepared alcohol and non-alcohol beverages for restaurant patrons</li>
-                        <li>Took orders and coordinated with kitchen for timely food delivery</li>
-                        <li>Managed table clearing and maintained neat dining areas</li>
-                        <li>Handled payment transactions and delivered cheques</li>
-                        <li>Ensured positive guest experience through regular table checks</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="timeline-category">
-                <h4><i class="fas fa-certificate"></i> Radisson Hotel Kandy - Training</h4>
-                <p class="timeline-category-duration">December 2023 - May 2024 (6 Months)</p>
-                <p class="timeline-category-role">Food & Beverage Department Trainee</p>
-                
-                <div class="responsibilities">
-                    <h5>Training Experience:</h5>
-                    <ul>
-                        <li>Trained in professional hotel service standards at 5-star hotel</li>
-                        <li>Learned international food and beverage service protocols</li>
-                        <li>Gained experience in upscale dining environment</li>
-                        <li>Enhanced customer service and hospitality skills</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Based in UAE and open to new opportunities</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>sudheshmadushanka@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+971 56 884 0769</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Al Hamra, Al Jazeera,<br>Ras Al Khaimah, UAE</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/sudhesh-madushanka-588332284</p>
-                        </div>
-                    </div>
+</body>
+</html>
