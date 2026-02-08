@@ -511,7 +511,105 @@
             .btn { padding: 10px 22px; font-size: 15px; }
             .profile-photo { width: 200px; height: 200px; }
         }
-    </style>
+    </style>/* CV Section - 514px Width */
+#cv-details {
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #f8f9f1 0%, #e6e6e6 100%);
+}
+
+.cv-container {
+    max-width: 514px; /* Changed to 514px */
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eaeaea;
+}
+
+.cv-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.cv-section:last-child {
+    border-bottom: none;
+}
+
+.cv-section h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+.cv-section h4 {
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.cv-section p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.cv-section strong {
+    color: #2c3e50;
+}
+
+.cv-section em {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.cv-section ul {
+    padding-left: 22px;
+    margin-top: 10px;
+}
+
+.cv-section li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-highlight {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+}
+
+.availability-badge {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .cv-container {
+        max-width: 95%; /* Mobile වලට 95% */
+        padding: 25px 20px;
+    }
+    
+    .cv-section h3 {
+        font-size: 22px;
+    }
+    
+    .cv-section h4 {
+        font-size: 18px;
+    }
+}
 </head><!-- ===== CV DETAILS SECTION - 515px Width ===== -->
 <section id="cv-details">
     <div class="cv-container">
