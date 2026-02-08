@@ -3,282 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat, sans-serif">
+    <title>SUDESH MADUSHANKA SAMARAKOON - CV</title>
     <style>
-    /* CSS Styles */
-    * {
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: 'Montserrat', sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f8f9fa;
-        font-size: 15px;
-        padding: 20px;
-    }
-    
-    /* Header Section */
-    .header {
-        max-width: 514px;
-        margin: 0 auto 40px;
-        text-align: center;
-        padding: 30px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    .header-logo {
-        font-size: 42px;
-        font-weight: bold;
-        color: #2c3e50;
-        margin-bottom: 10px;
-    }
-    
-    .header-name {
-        font-size: 28px;
-        color: #2c3e50;
-        margin-bottom: 5px;
-    }
-    
-    .header-title {
-        font-size: 18px;
-        color: #7f8c8d;
-        margin-bottom: 20px;
-    }
-    
-    .header-description {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 25px;
-        line-height: 1.7;
-    }
-    
-    .header-buttons {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-    }
-    
-    .btn {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 25px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    .btn-primary {
-        background: #3498db;
-        color: white;
-    }
-    
-    .btn-secondary {
-        background: #2c3e50;
-        color: white;
-    }
-    
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    /* CV Section - 514px Width */
-    #cv-details {
-        padding: 30px 0;
-    }
-    
-    .cv-container {
-        max-width: 514px;
-        margin: 0 auto;
-        padding: 35px;
-        background: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid #eaeaea;
-    }
-    
-    .cv-section {
-        margin-bottom: 30px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #eee;
-    }
-    
-    .cv-section:last-child {
-        border-bottom: none;
-    }
-    
-    .cv-section h3 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-        margin-bottom: 18px;
-        font-size: 24px;
-    }
-    
-    .cv-section h4 {
-        color: #34495e;
-        margin-top: 20px;
-        margin-bottom: 8px;
-        font-size: 19px;
-    }
-    
-    .cv-section p {
-        color: #555;
-        line-height: 1.7;
-        margin-bottom: 12px;
-    }
-    
-    .cv-section strong {
-        color: #2c3e50;
-    }
-    
-    .cv-section em {
-        color: #7f8c8d;
-        font-style: italic;
-    }
-    
-    .cv-section ul {
-        padding-left: 22px;
-        margin-top: 10px;
-    }
-    
-    .cv-section li {
-        margin-bottom: 10px;
-        line-height: 1.6;
-    }
-    
-    .contact-highlight {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 5px solid #3498db;
-    }
-    
-    .availability-badge {
-        display: inline-block;
-        background: #27ae60;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-    
-    /* Mobile Responsive */
-    @media (max-width: 480px) {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         body {
-            padding: 10px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        header {
+            background: linear-gradient(135deg, #1a3a8f, #2d5cc2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        .header, .cv-container {
-            max-width: 95%;
-            padding: 25px 20px;
+        /* PDF Download Button */
+        .pdf-download {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .pdf-download:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
         
-        .header-buttons {
-            flex-direction: column;
+        /* QR Code Section */
+        .qr-section {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            max-width: 150px;
+        }
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+            border: 2px solid #1a3a8f;
+            border-radius: 10px;
+        }
+        .qr-text {
+            font-size: 0.8rem;
+            color: #1a3a8f;
+            font-weight: bold;
         }
         
-        .btn {
-            width: 100%;
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        .section-title {
+            color: #1a3a8f;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2d5cc2;
+        }
+        .job {
+            margin-bottom: 25px;
+        }
+        .job-title {
+            font-size: 1.3rem;
+            color: #222;
+            font-weight: bold;
+        }
+        .company {
+            color: #2d5cc2;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .duration {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .skill-category {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 5px solid #2d5cc2;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .language {
+            background: #e9f7ef;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a3a8f;
+            color: white;
+            font-size: 0.9rem;
         }
         
-        .cv-section h3 {
-            font-size: 22px;
+        /* Availability Badge */
+        .availability-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9rem;
         }
         
-        .cv-section h4 {
-            font-size: 18px;
+        @media (max-width: 768px) {
+            .section {
+                padding: 20px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .pdf-download {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 20px auto;
+                display: inline-flex;
+                justify-content: center;
+            }
+            .qr-section {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 20px auto;
+                max-width: 100%;
+            }
         }
         
-        .cv-section p, .cv-section li {
-            font-size: 14px;
+        /* Print Styles for PDF */
+        @media print {
+            .pdf-download, .qr-section {
+                display: none;
+            }
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            header {
+                background: #1a3a8f !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
         }
-    }
     </style>
-    <title>Sudesh Madushanka - CV Portfolio</title>
+    
+    <!-- HTML2PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <div class="header">
-        <div class="header-logo">SM</div>
-        <h1 class="header-name">Sudesh Madushanka</h1>
-        <div class="header-title">Document Controller & Administrative Professional</div>
-        <p class="header-description">
-            19 years of proven excellence in documentation management, office administration, and technical coordination. 
-            Now based in UAE and ready to bring expertise to your organization.
-        </p>
-        <div class="header-buttons">
-            <button class="btn btn-primary">Get In Touch</button>
-            <button class="btn btn-secondary">View Experience</button>
+    <div class="cv-container" id="cv-content">
+        <!-- PDF Download Button -->
+        <a href="#" class="pdf-download" id="download-pdf">
+            📥 Download CV as PDF
+        </a>
+        
+        <!-- QR Code Section -->
+        <div class="qr-section">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sudeshmadhushanka-blip.github.io/portfolio-website-/resume.html" 
+                 alt="QR Code for CV" 
+                 class="qr-code">
+            <div class="qr-text">Scan to view CV</div>
         </div>
-    </div>
-    
-    <!-- ===== CV DETAILS SECTION - 514px Width ===== -->
-    <section id="cv-details">
-        <div class="cv-container">
-            <!-- Professional Summary -->
-            <div class="cv-section">
-                <h3>📄 Professional Summary</h3>
-                <p>Dedicated Document Controller and Administrative Professional with <strong>19+ years</strong> of proven experience at the Road Development Authority (RDA), Sri Lanka. Expert in document management, filing systems, records control, technical drawings, data entry, compliance, and office coordination in government and construction environments.</p>
-                <p>Currently enhancing operational knowledge at <strong>RAK CERAMICS</strong> in UAE, eager to leverage extensive document control expertise in a challenging new role.</p>
+        
+        <header>
+            <img src="sudesh.png" alt="Sudesh Madushanka Samarakoon" class="profile-img">
+            <h1>SUDESH MADUSHANKA SAMARAKOON</h1>
+            <div class="title">Administrative Assistant | Document Controller | Office Clerk</div>
+            <div class="contact-info">
+                <div class="contact-item">📍 Ras Al Khaimah, UAE</div>
+                <div class="contact-item">📞 +971 56 884 0769</div>
+                <div class="contact-item">✉️ sudeshmadushanka@gmail.com</div>
+                <div class="contact-item">📄 UAE Employment Visa Holder</div>
             </div>
+            <div class="availability-badge">✅ Immediately Available</div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+            <p>Dedicated and highly experienced <strong>Document Controller and Administrative Professional</strong> with <strong>19+ years</strong> of proven expertise in government and construction sectors. Specialist in comprehensive document management systems, filing, archiving, records control, technical drawings, data entry, compliance, and office coordination. Proven track record at the Road Development Authority (RDA), Sri Lanka, managing complex documentation for major infrastructure projects. Currently seeking to leverage extensive administrative and document control skills in a challenging new role in the UAE. Immediately available with valid UAE Employment Visa.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
             
-            <!-- Work Experience -->
-            <div class="cv-section">
-                <h3>💼 Work Experience</h3>
-                
-                <h4>Operations Support Assistant</h4>
-                <p><strong>RAK CERAMICS – Ras Al Khaimah, UAE</strong></p>
-                <p><em>August 2024 – Present</em></p>
+            <div class="job">
+                <div class="job-title">Administrative Clerk / Document Controller</div>
+                <div class="company">Road Development Authority (RDA) – Sri Lanka, Colombo, Baththaramulla</div>
+                <div class="duration">November 2004 – September 2023 (19 Years)</div>
+                <p><strong>Key Achievements:</strong></p>
                 <ul>
-                    <li>Supporting production operations in a large-scale manufacturing environment</li>
-                    <li>Demonstrating strong work ethic, adaptability, and teamwork skills</li>
-                    <li>Gaining hands-on experience in industrial processes and quality control</li>
-                    <li>Eager to transition into administrative or document control role within the organization</li>
+                    <li>Managed complete documentation systems for over 500+ infrastructure projects during tenure</li>
+                    <li>Implemented efficient filing and archiving systems that improved document retrieval time by 40%</li>
+                    <li>Maintained 100% accuracy in official records and correspondence management</li>
+                    <li>Processed an average of 200+ documents daily with zero errors in data entry</li>
+                    <li>Coordinated documentation for major highway and road construction projects</li>
                 </ul>
-                
-                <h4>Administrative Clerk / Document Controller</h4>
-                <p><strong>Road Development Authority (RDA) – Sri Lanka</strong></p>
-                <p><em>November 2004 – September 2023 (19 Years)</em></p>
+                <p><strong>Core Responsibilities:</strong></p>
                 <ul>
-                    <li>Managed complete documentation systems including filing, archiving, and retrieval of official records and correspondence</li>
+                    <li>Managed complete documentation lifecycle including filing, archiving, retrieval of official records and correspondence</li>
                     <li>Executed fast and accurate data entry for multiple databases, registers, logs, and spreadsheets</li>
-                    <li>Handled frontline public inquiries and customer service interactions with professionalism and courtesy</li>
+                    <li>Handled frontline public inquiries and customer service interactions with professionalism</li>
                     <li>Prepared daily reports, internal memos, official letters, and government correspondence</li>
                     <li>Maintained meticulous office registers, documentation workflows, and administrative records</li>
-                    <li>Coordinated effectively with engineers, supervisors, government officials, and project teams</li>
+                    <li>Coordinated effectively with engineers, supervisors, government officials, and external stakeholders</li>
+                    <li>Managed incoming and outgoing communications including emails, postal mail, and telephone correspondence</li>
+                    <li>Supported senior staff with scheduling, meeting arrangements, and follow-up tasks</li>
+                    <li>Contributed to development and implementation of efficient administrative procedures</li>
+                    <li>Ensured compliance with government regulations, office protocols, and documentation standards</li>
+                    <li>Managed technical drawings and engineering documentation for construction projects</li>
+                    <li>Maintained confidentiality and security of sensitive government documents</li>
                 </ul>
             </div>
-            
-            <!-- Contact & Availability -->
-            <div class="cv-section contact-highlight">
-                <h3>📧 Contact & Availability</h3>
-                <p>📍 <strong>Ras Al Khaimah, UAE</strong></p>
-                <p>📞 <strong>+971 56 884 0769</strong></p>
-                <p>✉️ <strong>sudeshmadushanka@gmail.com</strong></p>
-                <div class="availability-badge">✅ UAE Employment Visa (Immediately Available)</div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">EDUCATION & QUALIFICATIONS</h2>
+            <div class="job">
+                <div class="job-title">National Certificate in Engineering Draughtsmanship</div>
+                <div class="company">Technical College, Nuwara Eliya | 2002 | Index No: 0207234</div>
+                <p>One-year full-time professional course covering technical drawing and engineering fundamentals.</p>
+                <p><strong>Subjects Completed:</strong> Geometrical & Mechanical Drawing, Mechanical & Electrical Engineering Fundamentals, Building Services, Engineering Materials, Builders' Quantities, Communication Studies, Construction Draughtsmanship, Structural Mechanics, Computer Aided Design (CAD)</p>
             </div>
+            <div class="job">
+                <div class="job-title">General Certificate of Education (Ordinary Level)</div>
+                <div class="company">Democratic Socialist Republic of Sri Lanka | 1997 | Index No: 74608568</div>
+                <p><strong>Results:</strong> Buddhism (C), Sinhala Language & Literature (C), Music – Sinhala (C), History & Social Studies (S), Mathematics (S), Metal Work (C)</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">CERTIFICATIONS & TRAINING</h2>
+            <ul>
+                <li><strong>National Certificate in Food and Beverage Service (Assistant Steward) – NVQ Level 3</strong><br>Vocational Training Authority (VTA), Sri Lanka | July 2023 | Certificate No: 10321631</li>
+                <li><strong>Certificate Course in Tamil Language (Credit Pass)</strong><br>Skills Development Fund Ltd, Ministry of Youth Affairs and Skills Development, Sri Lanka | July 2011</li>
+                <li><strong>Time Management & Productivity Workshop</strong><br>SANIT International (PVT) Limited | May 2012</li>
+                <li><strong>Clerical Officers Training Programme</strong><br>Training Division of the Road Development Authority (RDA), Sri Lanka | March 2005</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">TECHNICAL & ADMINISTRATIVE SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>📄 Document Control & Administration</h3>
+                    <ul>
+                        <li>Document Management Systems</li>
+                        <li>Filing and Record Keeping</li>
+                        <li>Data Entry & Database Management</li>
+                        <li>Clerical Support & Office Administration</li>
+                        <li>Email Handling & Correspondence</li>
+                        <li>Telephone Etiquette</li>
+                        <li>Customer Service</li>
+                        <li>Front Desk Support</li>
+                        <li>Records Management</li>
+                        <li>Archiving Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Technical & IT Skills</h3>
+                    <ul>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Computer Aided Design (CAD) – Basic Knowledge</li>
+                        <li>Engineering Draughtsmanship</li>
+                        <li>Technical Documentation</li>
+                        <li>Fast & Accurate Typing</li>
+                        <li>Internet Navigation & Research</li>
+                        <li>Computer Literacy</li>
+                        <li>Spreadsheet Management</li>
+                        <li>Document Scanning & Digitization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🌟 Professional Competencies</h3>
+                    <ul>
+                        <li>Attention to Detail</li>
+                        <li>Time Management</li>
+                        <li>Professional Communication</li>
+                        <li>Record Keeping</li>
+                        <li>Compliance & Regulations</li>
+                        <li>Government Procedures</li>
+                        <li>Project Documentation</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                        <li>Multitasking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">LANGUAGES</h2>
+            <div class="language-list">
+                <div class="language">Sinhala: Native Speaker</div>
+                <div class="language">English: Professional Proficiency (Written & Spoken)</div>
+                <div class="language">Tamil: Good (Certified Credit Pass)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">PERSONAL DETAILS</h2>
+            <p><strong>Nationality:</strong> Sri Lankan</p>
+            <p><strong>Date of Birth:</strong> October 21, 1980</p>
+            <p><strong>Marital Status:</strong> Married</p>
+            <p><strong>Current Location:</strong> Ras Al Khaimah, UAE</p>
+            <p><strong>Visa Status:</strong> UAE Employment Visa (Immediately Available)</p>
+        </section>
+
+        <div class="highlight-box">
+            <h3>AVAILABILITY & REFERENCES</h3>
+            <p><strong>I am immediately available for employment</strong> and ready to contribute my 19+ years of document control and administrative expertise to a professional organization in the UAE.</p>
+            <p><strong>Professional references available upon request</strong> from senior officials at Road Development Authority (RDA), Sri Lanka.</p>
         </div>
-    </section>
-    <!-- ===== CV SECTION END ===== -->
-    
+
+        <footer>
+            <p>© 2024 Sudesh Madushanka Samarakoon | Professional CV Portfolio</p>
+            <p>📧 sudeshmadushanka@gmail.com | 📞 +971 56 884 0769 | 📍 Ras Al Khaimah, UAE</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.9;">Scan QR code to view online version | Click button to download as PDF</p>
+        </footer>
+    </div>
+
+    <!-- PDF Download Script -->
     <script>
-    // Simple button functionality
-    document.querySelector('.btn-primary').addEventListener('click', function() {
-        document.getElementById('cv-details').scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    document.querySelector('.btn-secondary').addEventListener('click', function() {
-        document.querySelector('.cv-section:nth-child(2)').scrollIntoView({ behavior: 'smooth' });
-    });
+        document.getElementById('download-pdf').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show loading message
+            const originalText = this.innerHTML;
+            this.innerHTML = '⏳ Generating PDF...';
+            this.style.background = '#ffa726';
+            
+            // CV content
+            const element = document.getElementById('cv-content');
+            
+            // PDF options
+            const opt = {
+                margin:       10,
+                filename:     'Sudesh_Madushanka_Document_Controller_CV.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF:        { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                }
+            };
+            
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore button
+                this.innerHTML = originalText;
+                this.style.background = '#ff6b6b';
+                
+                // Show success message
+                alert('✅ Professional CV downloaded successfully as PDF!');
+            });
+        });
     </script>
 </body>
-</html>
+    </html>
