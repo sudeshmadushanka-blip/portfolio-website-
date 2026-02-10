@@ -197,6 +197,29 @@
             width: 25px;
         }
 
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+
+        .visa-status {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         /* ===== RAK HIGHLIGHT SECTION ===== */
         .rak-highlight {
             background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
@@ -598,19 +621,26 @@
         <div class="contact-info">
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>sudesh.madushanka@example.com</span>
+                <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
             </div>
             <div class="contact-item">
                 <i class="fas fa-phone"></i>
-                <span>+971 50 123 4567</span>
+                <a href="tel:+971568840769">+971 56 884 0769</a>
             </div>
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Ras Al Khaimah, United Arab Emirates</span>
+                <span>Al Hamra, Al Jazeera, Ras Al Khaimah, UAE</span>
             </div>
             <div class="contact-item">
                 <i class="fab fa-linkedin"></i>
-                <span>linkedin.com/in/sudesh-madushanka</span>
+                <a href="https://linkedin.com/in/sudhesh-madushanka-588332284" target="_blank">linkedin.com/in/sudhesh-madushanka-588332284</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <a href="https://sudeshmadushanka-blip.github.io/portfolio-website-/" target="_blank">sudeshmadushanka-blip.github.io/portfolio-website-</a>
+            </div>
+            <div class="visa-status">
+                <i class="fas fa-passport"></i> Employment Visa | Available Immediately
             </div>
         </div>
 
@@ -714,9 +744,9 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // Generate QR Code
-        const cvUrl = window.location.href;
-        QRCode.toCanvas(document.getElementById('qrcode'), cvUrl, {
+        // Generate QR Code for Portfolio Website
+        const portfolioUrl = "https://sudeshmadushanka-blip.github.io/portfolio-website-/";
+        QRCode.toCanvas(document.getElementById('qrcode'), portfolioUrl, {
             width: 150,
             height: 150,
             color: {
@@ -729,11 +759,12 @@
                 document.getElementById('qrcode').innerHTML = 
                     '<div style="text-align:center; color:#666; padding:20px;">' +
                     '<i class="fas fa-qrcode" style="font-size:50px; color:#ccc; margin-bottom:10px;"></i><br>' +
-                    'QR Code Available</div>';
+                    '<a href="' + portfolioUrl + '" style="color:#1a3a8f; text-decoration:none;">' +
+                    'Portfolio Link</a></div>';
             }
         });
 
-        // PDF Download Function
+        // PDF Download Function - FIXED VERSION
         function downloadPDF() {
             const element = document.getElementById('cvContent');
             const originalTopBtn = document.getElementById('topDownloadPdf').innerHTML;
@@ -745,43 +776,58 @@
             document.getElementById('topDownloadPdf').disabled = true;
             document.getElementById('bottomDownloadPdf').disabled = true;
             
+            // Fix for html2pdf.js - Ensure proper configuration
             const opt = {
-                margin:       15,
+                margin:       10,
                 filename:     'Sudesh_Madushanka_RAK_CERAMICS_CV_99018571.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
+                image:        { 
+                    type: 'jpeg', 
+                    quality: 1 
+                },
                 html2canvas:  { 
-                    scale: 2, 
+                    scale: 3,
                     useCORS: true,
                     backgroundColor: '#ffffff',
-                    logging: false
+                    logging: false,
+                    allowTaint: true,
+                    letterRendering: true
                 },
                 jsPDF:        { 
                     unit: 'mm', 
                     format: 'a4', 
                     orientation: 'portrait',
                     compress: true
-                },
-                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                }
             };
 
-            // Generate PDF
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Restore buttons
-                document.getElementById('topDownloadPdf').innerHTML = originalTopBtn;
-                document.getElementById('bottomDownloadPdf').innerHTML = originalBottomBtn;
-                document.getElementById('topDownloadPdf').disabled = false;
-                document.getElementById('bottomDownloadPdf').disabled = false;
-                
-                // Show success message
-                alert('✅ CV downloaded successfully as PDF!\nFile: Sudesh_Madushanka_RAK_CERAMICS_CV_99018571.pdf\n\nReady for RAK CERAMICS submission.');
-            }).catch(err => {
+            // Generate PDF with error handling
+            try {
+                html2pdf().set(opt).from(element).save().then(() => {
+                    // Restore buttons
+                    document.getElementById('topDownloadPdf').innerHTML = originalTopBtn;
+                    document.getElementById('bottomDownloadPdf').innerHTML = originalBottomBtn;
+                    document.getElementById('topDownloadPdf').disabled = false;
+                    document.getElementById('bottomDownloadPdf').disabled = false;
+                    
+                    // Show success message
+                    alert('✅ CV downloaded successfully as PDF!\nFile: Sudesh_Madushanka_RAK_CERAMICS_CV_99018571.pdf\n\nReady for RAK CERAMICS submission.');
+                }).catch(err => {
+                    console.error('PDF generation error:', err);
+                    alert('❌ Error generating PDF. Please try again.\nError: ' + err.message);
+                    restoreButtons();
+                });
+            } catch (err) {
                 console.error('PDF generation error:', err);
-                alert('❌ Error generating PDF. Please try again.');
+                alert('❌ Error generating PDF. Please check console for details.');
+                restoreButtons();
+            }
+
+            function restoreButtons() {
                 document.getElementById('topDownloadPdf').innerHTML = originalTopBtn;
                 document.getElementById('bottomDownloadPdf').innerHTML = originalBottomBtn;
                 document.getElementById('topDownloadPdf').disabled = false;
                 document.getElementById('bottomDownloadPdf').disabled = false;
-            });
+            }
         }
 
         // Add event listeners to both download buttons
@@ -799,7 +845,8 @@
         });
 
         // Console message
-        console.log('🎯 RAK CERAMICS CV | File No: 99018571 | QR Code Active');
+        console.log('🎯 RAK CERAMICS CV | File No: 99018571 | Portfolio QR Code Active');
+        console.log('📱 Contact: +971 56 884 0769 | Email: sudheshmadushanka@gmail.com');
     </script>
 </body>
 </html>
