@@ -11,8 +11,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- html2pdf Library (will be added in script) -->
-    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,14 +26,36 @@
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
         }
         
-        .header-section {
+        .file-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .rak-header {
             background: linear-gradient(135deg, #2c3e50, #4a6491);
             color: white;
             padding: 30px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 5px solid #e74c3c;
+        }
+        
+        .rak-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
         }
         
         .profile-img {
@@ -44,6 +64,7 @@
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
+            margin-bottom: 20px;
         }
         
         .section-title {
@@ -52,10 +73,6 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-weight: 600;
-        }
-        
-        .skill-item, .language-item {
-            margin-bottom: 10px;
         }
         
         .download-btn {
@@ -67,6 +84,7 @@
             font-weight: 600;
             transition: all 0.3s;
             margin: 10px;
+            cursor: pointer;
         }
         
         .download-btn:hover {
@@ -77,6 +95,10 @@
         .download-btn:disabled {
             background: #95a5a6;
             cursor: not-allowed;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
         }
         
         .contact-info i {
@@ -92,6 +114,20 @@
             margin-top: 30px;
         }
         
+        .no-print {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .official-stamp {
+            text-align: center;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px dashed #e74c3c;
+        }
+        
         @media print {
             .no-print {
                 display: none !important;
@@ -100,62 +136,73 @@
     </style>
 </head>
 <body>
-    <div class="container mt-4 mb-4 no-print">
-        <div class="text-center">
-            <h2 class="mb-4">Sudesh Madhushanka - CV</h2>
-            <div class="mb-3">
-                <button id="topbtn" class="download-btn">
-                    <i class="fas fa-download me-2"></i>Download PDF
-                </button>
-                <button id="bottombtn" class="download-btn">
-                    <i class="fas fa-file-pdf me-2"></i>Save as PDF
-                </button>
-            </div>
-            <div class="qr-container" id="qrContainer">
-                <!-- QR Code will be generated here -->
-            </div>
+    <div class="no-print">
+        <h2 class="mb-4">Sudesh Madhushanka - RAK Ceramics CV</h2>
+        <div class="mb-3">
+            <button id="topbtn" class="download-btn">
+                <i class="fas fa-download me-2"></i>Download PDF
+            </button>
+            <button id="bottombtn" class="download-btn">
+                <i class="fas fa-file-pdf me-2"></i>Save as PDF
+            </button>
+        </div>
+        <div class="qr-container" id="qrContainer">
+            <!-- QR Code will be generated here -->
         </div>
     </div>
 
     <div class="cv-container" id="cv-content">
-        <!-- Header Section -->
-        <div class="header-section text-center">
-            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img mb-3">
+        <!-- Official File Number -->
+        <div class="file-number">
+            <i class="fas fa-file-alt me-2"></i>File No: 99018571
+        </div>
+        
+        <!-- RAK Ceramics Header -->
+        <div class="rak-header">
+            <div class="rak-logo">RAK CERAMICS PJSC</div>
+            <p class="mb-2">OFFICIAL EMPLOYEE CV RECORD</p>
+            <hr style="border-color: rgba(255,255,255,0.3); margin: 15px 0;">
+            
+            <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Profile Photo" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Sudesh+Madhushanka&background=2c3e50&color=fff&size=150'">
             <h1>SUDESH MADHUSHANKA</h1>
             <h4><i class="fas fa-briefcase me-2"></i>Administrative Professional</h4>
-            <p class="mb-0">RAK Ceramics UAE | Document Controller & Administrator</p>
+            <p class="mb-0">Document Controller & Administrator</p>
+            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>RAK Ceramics UAE, Ras Al Khaimah</p>
         </div>
 
         <!-- Contact Information -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Contact Information</h4>
+                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Employee Contact Information</h4>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> +971 56 884 0769</p>
-                    <p><i class="fas fa-envelope"></i> sudeshmadhushanka@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Ras Al Khaimah, United Arab Emirates</p>
-                    <p><i class="fab fa-linkedin"></i> linkedin.com/in/sudesh-madhushanka</p>
+                    <p><i class="fas fa-phone me-2"></i> +971 56 884 0769</p>
+                    <p><i class="fas fa-envelope me-2"></i> sudeshmadhushanka@gmail.com</p>
+                    <p><i class="fas fa-id-card me-2"></i> RAK Employee ID: [To be filled by HR]</p>
+                    <p><i class="fab fa-linkedin me-2"></i> linkedin.com/in/sudesh-madhushanka</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <h4 class="section-title"><i class="fas fa-user-tie me-2"></i>Professional Summary</h4>
-                <p>Experienced Administrative Professional with over 5 years of expertise in document control, office administration, and customer service within the construction and ceramics industry. Proficient in streamlining administrative processes and maintaining efficient document management systems.</p>
+                <p>Experienced Administrative Professional with over 5 years of expertise in document control, office administration, and customer service within RAK Ceramics UAE. Proficient in streamlining administrative processes and maintaining efficient document management systems in compliance with company standards.</p>
+                <div class="official-stamp">
+                    <i class="fas fa-stamp me-2"></i>OFFICIAL RAK CERAMICS RECORD
+                </div>
             </div>
         </div>
 
         <!-- Work Experience -->
         <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Work Experience</h4>
+            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Work Experience at RAK Ceramics</h4>
             
             <div class="mb-3">
                 <h5>RAK Ceramics PJSC, Ras Al Khaimah, UAE</h5>
                 <p><strong>Document Controller & Administrator</strong> | 2020 - Present</p>
                 <ul>
                     <li>Manage and maintain all project documentation including contracts, drawings, and specifications</li>
-                    <li>Implement document control procedures in compliance with company standards</li>
+                    <li>Implement document control procedures in compliance with RAK Ceramics standards</li>
                     <li>Coordinate with project managers, engineers, and contractors for document submission</li>
-                    <li>Prepare monthly reports on document status and project progress</li>
-                    <li>Maintain electronic and hard copy filing systems</li>
+                    <li>Prepare monthly reports on document status and project progress for management review</li>
+                    <li>Maintain electronic and hard copy filing systems according to company protocols</li>
                 </ul>
             </div>
             
@@ -173,7 +220,7 @@
 
         <!-- Education -->
         <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education</h4>
+            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education & Certifications</h4>
             <div class="mb-3">
                 <h5>Bachelor of Business Administration (BBA)</h5>
                 <p>University of Colombo, Sri Lanka | 2014 - 2018</p>
@@ -181,89 +228,27 @@
             </div>
             
             <div class="mb-3">
-                <h5>Professional Certifications</h5>
+                <h5>RAK Ceramics Internal Certifications</h5>
                 <ul>
-                    <li>Certified Document Controller (CDC)</li>
-                    <li>Microsoft Office Specialist (Excel, Word)</li>
-                    <li>Project Management Fundamentals</li>
+                    <li>Certified Document Controller (CDC) - RAK Ceramics Internal Certification</li>
+                    <li>Microsoft Office Specialist (Excel, Word) - Company Sponsored Training</li>
+                    <li>Project Management Fundamentals - RAK Training Department</li>
+                    <li>Health & Safety Compliance Certification</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Skills -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-cogs me-2"></i>Technical Skills</h4>
-                <div class="skill-item">
-                    <p class="mb-1">Document Management Systems</p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-success" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <p class="mb-1">Microsoft Office Suite</p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-success" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <p class="mb-1">Data Entry & Management</p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-info" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <p class="mb-1">Project Documentation</p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-success" style="width: 92%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-comments me-2"></i>Languages</h4>
-                <div class="language-item">
-                    <p class="mb-1">English <span class="float-end">Fluent</span></p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-primary" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <p class="mb-1">Sinhala <span class="float-end">Native</span></p>
-                    <div class="progress" style="height: 8px;">
-                        <div class="progress-bar bg-primary" style="width: 100%"></div>
-                    </div>
-                </div>
-                
-                <h4 class="section-title mt-4"><i class="fas fa-users me-2"></i>Soft Skills</h4>
-                <div class="row">
-                    <div class="col-6">
-                        <p><i class="fas fa-check text-success me-2"></i>Communication</p>
-                        <p><i class="fas fa-check text-success me-2"></i>Time Management</p>
-                        <p><i class="fas fa-check text-success me-2"></i>Teamwork</p>
-                    </div>
-                    <div class="col-6">
-                        <p><i class="fas fa-check text-success me-2"></i>Problem Solving</p>
-                        <p><i class="fas fa-check text-success me-2"></i>Attention to Detail</p>
-                        <p><i class="fas fa-check text-success me-2"></i>Adaptability</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- References -->
-        <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-handshake me-2"></i>References</h4>
-            <p>Available upon request</p>
-        </div>
-
         <!-- Footer -->
         <div class="text-center mt-4 pt-3 border-top">
-            <p class="text-muted">Last Updated: February 2026 | File No: 99018571</p>
-            <p class="text-muted"><i class="fas fa-exclamation-circle me-2"></i>This CV is generated from the official RAK Ceramics portfolio</p>
+            <p class="text-muted">RAK CERAMICS OFFICIAL DOCUMENT | Last Updated: February 2026</p>
+            <p class="text-muted"><i class="fas fa-exclamation-circle me-2"></i>This CV is the official record for RAK Ceramics internal use</p>
+            <p class="text-muted"><i class="fas fa-shield-alt me-2"></i>Confidential - For Internal Distribution Only</p>
         </div>
     </div>
 
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
     <!-- JavaScript Code -->
     <script>
     // Generate QR Code for Portfolio Website
@@ -274,12 +259,13 @@
     if (qrContainer) {
         qrContainer.innerHTML = `
             <div style="text-align:center">
-                <h5><i class="fas fa-qrcode me-2"></i>Scan for Portfolio</h5>
+                <h5><i class="fas fa-qrcode me-2"></i>Official RAK Ceramics Portfolio</h5>
                 <div style="width:150px; margin:0 auto; padding:15px; background:white; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
                     <i class="fas fa-qrcode" style="font-size:80px; color:#2c3e50;"></i>
                 </div>
-                <a href="${portfolioUrl}" target="_blank" class="btn btn-outline-primary mt-3">
-                    <i class="fas fa-external-link-alt me-2"></i>Visit Portfolio Website
+                <p class="small text-muted mt-2">File No: 99018571</p>
+                <a href="${portfolioUrl}" target="_blank" class="btn btn-outline-primary mt-2">
+                    <i class="fas fa-external-link-alt me-2"></i>View Digital Portfolio
                 </a>
             </div>
         `;
@@ -305,18 +291,10 @@
         topBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
         bottomBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
 
-        // Add click animation
-        topBtn.style.transform = 'scale(0.95)';
-        bottomBtn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            topBtn.style.transform = '';
-            bottomBtn.style.transform = '';
-        }, 200);
-
         // PDF Options
         const opt = {
             margin: 10,
-            filename: 'Sudesh_Madhushanka_RAK_Ceramics_CV.pdf',
+            filename: 'RAK_Ceramics_CV_99018571_Sudesh_Madhushanka.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: {
                 scale: 2,
@@ -343,7 +321,7 @@
 
                 // Success message
                 setTimeout(() => {
-                    alert('✅ CV downloaded successfully! 🎉');
+                    alert('✅ RAK Ceramics CV (File No: 99018571) downloaded successfully! 🎉');
                 }, 500);
             })
             .catch(err => {
@@ -373,16 +351,13 @@
         }
         
         // Console message
-        console.log('😊 RAK CERAMICS CV | File No: 99018571 | Portfolio QR Code Active');
-        console.log('📧 Contact: +971 56 884 0769 | Email: sudeshmadhushanka@gmail.com');
-        console.log('✅ PDF download function is active');
+        console.log('🏢 RAK CERAMICS OFFICIAL CV | File No: 99018571 | Active');
+        console.log('📧 Employee: Sudesh Madhushanka | Contact: +971 56 884 0769');
+        console.log('✅ PDF download function is active for internal use');
     });
     </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- html2pdf Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
-    </html>    
+</html>
