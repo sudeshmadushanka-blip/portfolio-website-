@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudesh Madhushanka - CV | RAK Ceramics</title>
+    <title>S.M.S. Madushanka Samarakoon - Document Controller | RAK Ceramics</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,18 +41,18 @@
             font-weight: bold;
         }
         
-        .rak-header {
-            background: linear-gradient(135deg, #2c3e50, #4a6491);
+        .rda-header {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 30px;
             text-align: center;
-            border-bottom: 5px solid #e74c3c;
+            border-bottom: 5px solid #f39c12;
         }
         
-        .rak-logo {
-            font-size: 24px;
+        .rda-logo {
+            font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
             color: #fff;
@@ -92,31 +92,44 @@
             box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
         }
         
-        .download-btn:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-        
-        .contact-info i {
-            color: #3498db;
-            width: 25px;
-        }
-        
-        .qr-container {
-            text-align: center;
-            padding: 20px;
+        .service-record {
             background: #f8f9fa;
+            border: 2px solid #1a5276;
             border-radius: 10px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
         
-        .no-print {
-            text-align: center;
-            padding: 20px;
+        .service-office {
+            background: #e8f4fc;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .certification-badge {
+            background: #e8f4fc;
+            border-left: 4px solid #3498db;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 25px;
+        }
+        
+        .timeline-item:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
         }
         
         .official-stamp {
@@ -126,123 +139,208 @@
             margin-top: 20px;
             padding: 10px;
             border-top: 2px dashed #e74c3c;
-        }
-        
-        @media print {
-            .no-print {
-                display: none !important;
-            }
+            border-bottom: 2px dashed #e74c3c;
+            background: #fdf2f2;
         }
     </style>
 </head>
 <body>
-    <div class="no-print">
-        <h2 class="mb-4">Sudesh Madhushanka - RAK Ceramics CV</h2>
-        <div class="mb-3">
-            <button id="topbtn" class="download-btn">
-                <i class="fas fa-download me-2"></i>Download PDF
-            </button>
-            <button id="bottombtn" class="download-btn">
-                <i class="fas fa-file-pdf me-2"></i>Save as PDF
-            </button>
-        </div>
-        <div class="qr-container" id="qrContainer">
-            <!-- QR Code will be generated here -->
+    <div class="container mt-4 mb-4">
+        <div class="text-center">
+            <h2 class="mb-4">S.M.S. Madushanka Samarakoon - RDA Service Record</h2>
+            <div class="mb-3">
+                <button id="topbtn" class="download-btn">
+                    <i class="fas fa-download me-2"></i>Download PDF
+                </button>
+                <button id="bottombtn" class="download-btn">
+                    <i class="fas fa-file-pdf me-2"></i>Save as PDF
+                </button>
+            </div>
+            <div class="qr-container" id="qrContainer">
+                <!-- QR Code will be generated here -->
+            </div>
         </div>
     </div>
 
     <div class="cv-container" id="cv-content">
         <!-- Official File Number -->
         <div class="file-number">
-            <i class="fas fa-file-alt me-2"></i>File No: 99018571
+            <i class="fas fa-file-certificate me-2"></i>File No: 99018571
         </div>
         
-        <!-- RAK Ceramics Header -->
-        <div class="rak-header">
-            <div class="rak-logo">RAK CERAMICS PJSC</div>
-            <p class="mb-2">OFFICIAL EMPLOYEE CV RECORD</p>
+        <!-- RDA Header -->
+        <div class="rda-header">
+            <div class="rda-logo">ROAD DEVELOPMENT AUTHORITY OF SRI LANKA</div>
+            <p class="mb-2">OFFICIAL SERVICE RECORD CERTIFICATE</p>
             <hr style="border-color: rgba(255,255,255,0.3); margin: 15px 0;">
             
-            <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Profile Photo" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Sudesh+Madhushanka&background=2c3e50&color=fff&size=150'">
-            <h1>SUDESH MADHUSHANKA</h1>
-            <h4><i class="fas fa-briefcase me-2"></i>Administrative Professional</h4>
-            <p class="mb-0">Document Controller & Administrator</p>
-            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>RAK Ceramics UAE, Ras Al Khaimah</p>
+            <img src="https://ui-avatars.com/api/?name=S.M.S+Madushanka+RDA&background=1a5276&color=fff&size=150&bold=true" 
+                 alt="Profile Photo" class="profile-img">
+            <h1>MR. S.M.S. MADUSHANKA</h1>
+            <h4><i class="fas fa-user-tie me-2"></i>Administrative Clerk / Document Controller</h4>
+            <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Service Period: 09 November 2004 - 25 September 2023</p>
+            <p class="mb-0"><i class="fas fa-clock me-2"></i>Total Service: 18 Years, 10 Months, 16 Days</p>
+        </div>
+
+        <!-- Official RDA Service Record -->
+        <div class="service-record">
+            <h4 class="section-title text-center"><i class="fas fa-file-contract me-2"></i>OFFICIAL RDA SERVICE RECORD</h4>
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <p><strong><i class="fas fa-user me-2"></i>Name of Officer:</strong> MR. S.M.S. MADUSHANKA</p>
+                    <p><strong><i class="fas fa-briefcase me-2"></i>Position Held:</strong> CLERK</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong><i class="fas fa-star me-2"></i>Efficiency Rating:</strong> <span class="badge bg-success">GOOD</span></p>
+                    <p><strong><i class="fas fa-award me-2"></i>General Conduct:</strong> <span class="badge bg-success">GOOD</span></p>
+                </div>
+            </div>
+            
+            <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Service Locations & Periods:</h5>
+            
+            <div class="service-office">
+                <h6><i class="fas fa-building me-2"></i>1. Provincial Director's Office - Uva</h6>
+                <p class="mb-1"><i class="fas fa-calendar me-2"></i>Period: 09 November 2004 - 22 October 2007</p>
+                <p class="mb-0"><i class="fas fa-clock me-2"></i>Duration: 2 Years, 11 Months, 13 Days</p>
+            </div>
+            
+            <div class="service-office">
+                <h6><i class="fas fa-building me-2"></i>2. Executive Engineer's Office - Badulla</h6>
+                <p class="mb-1"><i class="fas fa-calendar me-2"></i>Period: 23 October 2007 - 09 March 2010</p>
+                <p class="mb-0"><i class="fas fa-clock me-2"></i>Duration: 2 Years, 4 Months, 14 Days</p>
+            </div>
+            
+            <div class="service-office">
+                <h6><i class="fas fa-building me-2"></i>3. Chief Engineer's Office - Kandy</h6>
+                <p class="mb-1"><i class="fas fa-calendar me-2"></i>Period: 10 March 2010 - 19 April 2017</p>
+                <p class="mb-0"><i class="fas fa-clock me-2"></i>Duration: 7 Years, 1 Month, 9 Days</p>
+            </div>
+            
+            <div class="service-office">
+                <h6><i class="fas fa-building me-2"></i>4. Executive Engineer's Office - Kadugannawa</h6>
+                <p class="mb-1"><i class="fas fa-calendar me-2"></i>Period: 20 April 2017 - 25 September 2023</p>
+                <p class="mb-0"><i class="fas fa-clock me-2"></i>Duration: 6 Years, 5 Months, 5 Days</p>
+            </div>
+            
+            <div class="alert alert-warning mt-3">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Cause of Leaving RDA:</strong> RESIGNATION (Voluntary Resignation after 19 years of continuous service)
+            </div>
+            
+            <div class="official-stamp">
+                <i class="fas fa-stamp me-2"></i>ISSUED BY DIRECTOR (HR GENERAL & EXPRESSWAYS) - ROAD DEVELOPMENT AUTHORITY
+            </div>
         </div>
 
         <!-- Contact Information -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Employee Contact Information</h4>
+                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Current Contact Information</h4>
                 <div class="contact-info">
                     <p><i class="fas fa-phone me-2"></i> +971 56 884 0769</p>
-                    <p><i class="fas fa-envelope me-2"></i> sudeshmadhushanka@gmail.com</p>
-                    <p><i class="fas fa-id-card me-2"></i> RAK Employee ID: [To be filled by HR]</p>
-                    <p><i class="fab fa-linkedin me-2"></i> linkedin.com/in/sudesh-madhushanka</p>
+                    <p><i class="fas fa-envelope me-2"></i> sudheshmadushanka@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Al Hamra, Al Jazeera, Ras Al Khaimah, UAE</p>
+                    <p><i class="fab fa-linkedin me-2"></i> linkedin.com/in/sudhesh-madushanka-588332284</p>
+                    <p><i class="fas fa-passport me-2"></i> Visa Status: Employment Visa | Available: Immediately</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-user-tie me-2"></i>Professional Summary</h4>
-                <p>Experienced Administrative Professional with over 5 years of expertise in document control, office administration, and customer service within RAK Ceramics UAE. Proficient in streamlining administrative processes and maintaining efficient document management systems in compliance with company standards.</p>
-                <div class="official-stamp">
-                    <i class="fas fa-stamp me-2"></i>OFFICIAL RAK CERAMICS RECORD
+                <h4 class="section-title"><i class="fas fa-tasks me-2"></i>Key Responsibilities at RDA</h4>
+                <div class="timeline-item">Document Control & Management Systems</div>
+                <div class="timeline-item">Technical Documentation & Engineering Drawings</div>
+                <div class="timeline-item">Government Correspondence & Report Preparation</div>
+                <div class="timeline-item">Records Management & Archiving Systems</div>
+                <div class="timeline-item">Public Relations & Customer Service</div>
+                <div class="timeline-item">Data Entry & Database Management</div>
+            </div>
+        </div>
+
+        <!-- RDA Training & Certifications -->
+        <div class="mb-4">
+            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>RDA Official Training & Certifications</h4>
+            
+            <div class="certification-badge">
+                <h6><i class="fas fa-certificate me-2 text-primary"></i>CLERICAL OFFICERS TRAINING PROGRAMME</h6>
+                <p class="mb-1"><strong>Road Development Authority - Training Division</strong></p>
+                <p class="mb-1"><i class="fas fa-calendar me-2"></i>Training Dates: 11th & 12th March 2005</p>
+                <p class="mb-0"><strong>Training Areas:</strong> Rules & Regulations, Office Procedures, Duties & Responsibilities, Public Relations</p>
+                <p class="mb-0"><i class="fas fa-user-tie me-2"></i>Supervised by: Director (Training) & General Manager, RDA</p>
+            </div>
+        </div>
+
+        <!-- Other Certifications -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-certificate me-2"></i>Other Certifications</h4>
+                
+                <div class="certification-badge">
+                    <h6>Time Management & Productivity Workshop</h6>
+                    <p class="mb-1">Sanit International (Pvt) Ltd | May 2012</p>
+                    <p class="mb-0">Certificate No: T.T.017 | 5-hour intensive workshop</p>
+                </div>
+                
+                <div class="certification-badge">
+                    <h6>National Certificate - Engineering Draughtsmanship</h6>
+                    <p class="mb-1">Technical College, Nuwara Eliya | 2002</p>
+                    <p class="mb-0">Index No: 0207234 | One-year full-time course</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-language me-2"></i>Languages & Skills</h4>
+                <div class="language-item">
+                    <p class="mb-1">Sinhala <span class="float-end"><strong>Native</strong></span></p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <p class="mb-1">English <span class="float-end"><strong>Good</strong></span></p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-info" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <p class="mb-1">Tamil <span class="float-end"><strong>Basic</strong></span></p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-warning" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <p><strong>Technical Skills:</strong> MS Office, Document Management, CAD Basics, Data Entry</p>
                 </div>
             </div>
         </div>
 
-        <!-- Work Experience -->
+        <!-- Personal Details -->
         <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Work Experience at RAK Ceramics</h4>
-            
-            <div class="mb-3">
-                <h5>RAK Ceramics PJSC, Ras Al Khaimah, UAE</h5>
-                <p><strong>Document Controller & Administrator</strong> | 2020 - Present</p>
-                <ul>
-                    <li>Manage and maintain all project documentation including contracts, drawings, and specifications</li>
-                    <li>Implement document control procedures in compliance with RAK Ceramics standards</li>
-                    <li>Coordinate with project managers, engineers, and contractors for document submission</li>
-                    <li>Prepare monthly reports on document status and project progress for management review</li>
-                    <li>Maintain electronic and hard copy filing systems according to company protocols</li>
-                </ul>
-            </div>
-            
-            <div class="mb-3">
-                <h5>Previous Administrative Roles</h5>
-                <p><strong>Administrative Assistant</strong> | 2018 - 2020</p>
-                <ul>
-                    <li>Managed office correspondence and communications</li>
-                    <li>Assisted in HR documentation and employee records management</li>
-                    <li>Coordinated meetings and prepared minutes</li>
-                    <li>Handled inventory and office supply management</li>
-                </ul>
+            <h4 class="section-title"><i class="fas fa-user me-2"></i>Personal Details</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <p><i class="fas fa-passport me-2"></i> <strong>Nationality:</strong> Sri Lankan</p>
+                    <p><i class="fas fa-birthday-cake me-2"></i> <strong>Date of Birth:</strong> 21 October 1980</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-heart me-2"></i> <strong>Marital Status:</strong> Married</p>
+                    <p><i class="fas fa-id-card me-2"></i> <strong>National ID:</strong> 802952147V</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-map-pin me-2"></i> <strong>Current Location:</strong> UAE</p>
+                    <p><i class="fas fa-flag me-2"></i> <strong>Status:</strong> Available for Employment</p>
+                </div>
             </div>
         </div>
 
-        <!-- Education -->
-        <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education & Certifications</h4>
-            <div class="mb-3">
-                <h5>Bachelor of Business Administration (BBA)</h5>
-                <p>University of Colombo, Sri Lanka | 2014 - 2018</p>
-                <p>Specialization: Human Resource Management</p>
-            </div>
-            
-            <div class="mb-3">
-                <h5>RAK Ceramics Internal Certifications</h5>
-                <ul>
-                    <li>Certified Document Controller (CDC) - RAK Ceramics Internal Certification</li>
-                    <li>Microsoft Office Specialist (Excel, Word) - Company Sponsored Training</li>
-                    <li>Project Management Fundamentals - RAK Training Department</li>
-                    <li>Health & Safety Compliance Certification</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Footer -->
+        <!-- Official Footer -->
         <div class="text-center mt-4 pt-3 border-top">
-            <p class="text-muted">RAK CERAMICS OFFICIAL DOCUMENT | Last Updated: February 2026</p>
-            <p class="text-muted"><i class="fas fa-exclamation-circle me-2"></i>This CV is the official record for RAK Ceramics internal use</p>
-            <p class="text-muted"><i class="fas fa-shield-alt me-2"></i>Confidential - For Internal Distribution Only</p>
+            <div class="official-stamp mb-3">
+                <i class="fas fa-file-signature me-2"></i>OFFICIAL SERVICE RECORD - VERIFIED BY ROAD DEVELOPMENT AUTHORITY
+            </div>
+            <p class="text-muted"><i class="fas fa-exclamation-circle me-2"></i>This document is based on Official RDA Service Letter issued by Director (HRG & E)</p>
+            <p class="text-muted">Reference No: 99018571 | Issued Date: As per RDA Records</p>
+            <p class="text-muted"><i class="fas fa-shield-alt me-2"></i>Original Service Letter and Certificates available for verification</p>
         </div>
     </div>
 
@@ -252,20 +350,20 @@
     <!-- JavaScript Code -->
     <script>
     // Generate QR Code for Portfolio Website
-    const portfolioUrl = "https://sudeshmadhushanka-a-blip.github.io/portfolio/";
+    const portfolioUrl = "https://sudeshmadushanka-blip.github.io/portfolio-website/";
 
     // Simple QR Code implementation
     const qrContainer = document.getElementById('qrContainer');
     if (qrContainer) {
         qrContainer.innerHTML = `
             <div style="text-align:center">
-                <h5><i class="fas fa-qrcode me-2"></i>Official RAK Ceramics Portfolio</h5>
+                <h5><i class="fas fa-qrcode me-2"></i>RDA Service Record Verification</h5>
                 <div style="width:150px; margin:0 auto; padding:15px; background:white; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-                    <i class="fas fa-qrcode" style="font-size:80px; color:#2c3e50;"></i>
+                    <i class="fas fa-qrcode" style="font-size:80px; color:#1a5276;"></i>
                 </div>
-                <p class="small text-muted mt-2">File No: 99018571</p>
+                <p class="small text-muted mt-2">File No: 99018571 | RDA Service: 2004-2023</p>
                 <a href="${portfolioUrl}" target="_blank" class="btn btn-outline-primary mt-2">
-                    <i class="fas fa-external-link-alt me-2"></i>View Digital Portfolio
+                    <i class="fas fa-external-link-alt me-2"></i>View Complete Portfolio
                 </a>
             </div>
         `;
@@ -294,7 +392,7 @@
         // PDF Options
         const opt = {
             margin: 10,
-            filename: 'RAK_Ceramics_CV_99018571_Sudesh_Madhushanka.pdf',
+            filename: 'RDA_Service_Record_SMS_Madushanka_2004-2023.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: {
                 scale: 2,
@@ -321,7 +419,7 @@
 
                 // Success message
                 setTimeout(() => {
-                    alert('✅ RAK Ceramics CV (File No: 99018571) downloaded successfully! 🎉');
+                    alert('✅ RDA Official Service Record (2004-2023) downloaded successfully! 🎉');
                 }, 500);
             })
             .catch(err => {
@@ -351,9 +449,10 @@
         }
         
         // Console message
-        console.log('🏢 RAK CERAMICS OFFICIAL CV | File No: 99018571 | Active');
-        console.log('📧 Employee: Sudesh Madhushanka | Contact: +971 56 884 0769');
-        console.log('✅ PDF download function is active for internal use');
+        console.log('🏛️ ROAD DEVELOPMENT AUTHORITY - OFFICIAL SERVICE RECORD');
+        console.log('👤 Officer: Mr. S.M.S. Madushanka | Service: 2004-2023 (19 Years)');
+        console.log('⭐ Efficiency: GOOD | Conduct: GOOD | File No: 99018571');
+        console.log('📞 UAE Contact: +971 56 884 0769 | Available: Immediately');
     });
     </script>
 
