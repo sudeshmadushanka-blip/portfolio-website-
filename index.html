@@ -86,6 +86,19 @@
             font-weight: 400;
         }
 
+        .rak-badge {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+
         .availability {
             background: #4CAF50;
             color: white;
@@ -190,6 +203,17 @@
             width: 30px;
         }
 
+        .contact-item a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+
         .visa-badge {
             background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             color: white;
@@ -199,25 +223,26 @@
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
             margin-top: 15px;
-        }
-
-        /* ===== RAK CERAMICS BADGE ===== */
-        .rak-badge {
-            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 0.95rem;
         }
 
-        .rak-badge img {
-            width: 20px;
-            height: auto;
+        .note {
+            margin-top: 25px;
+            color: #666;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .note strong {
+            color: #d32f2f;
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
@@ -282,7 +307,7 @@
             
             <!-- RAK CERAMICS BADGE -->
             <div class="rak-badge">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAK_Ceramics_logo.svg/240px-RAK_Ceramics_logo.svg.png" alt="RAK" style="width: 20px; height: auto;">
+                <i class="fas fa-building"></i>
                 Currently at RAK CERAMICS UAE
             </div>
             
@@ -333,11 +358,11 @@
             <div class="contact-items">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>Your.Email@example.com</span>
+                    <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+971 XX XXX XXXX</span>
+                    <a href="tel:+971568840769">+971 56 884 0769</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
@@ -345,7 +370,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/yourprofile</span>
+                    <a href="https://linkedin.com/in/sudhesh-madushanka-588332284" target="_blank">linkedin.com/in/sudhesh-madushanka-588332284</a>
                 </div>
             </div>
             
@@ -354,9 +379,9 @@
             </div>
             
             <!-- NOTE ABOUT RAK CERAMICS CV -->
-            <p style="margin-top: 25px; color: #666; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="note">
                 <strong>Note:</strong> The <span style="color: #d32f2f; font-weight: bold;">RAK CERAMICS CV</span> includes PDF download functionality and is specifically tailored for administrative/document control positions within RAK CERAMICS UAE.
-            </p>
+            </div>
         </div>
     </div>
 
@@ -381,6 +406,7 @@
         
         // Console welcome message
         console.log('🎯 Sudesh Madushanka Portfolio | RAK CERAMICS Specialized CV Available');
+        console.log('📱 Contact: +971 56 884 0769 | Email: sudheshmadushanka@gmail.com');
     </script>
 </body>
 </html>
