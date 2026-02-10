@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudesh Madushanka - Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== HEADER SECTION ===== */
+        header {
+            background: linear-gradient(135deg, #1a3a8f 0%, #2d5cc2 100%);
+            color: white;
+            padding: 50px 30px 40px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid white;
+            margin: 0 auto 25px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .availability {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== BUTTONS SECTION ===== */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 50px 40px;
+            background: #f8f9fa;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #1a3a8f 0%, #2d5cc2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(26, 58, 143, 0.2);
+            min-height: 80px;
+        }
+
+        .btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(26, 58, 143, 0.3);
+            background: linear-gradient(135deg, #2d5cc2 0%, #3a6ee0 100%);
+        }
+
+        .btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Special button for RAK CERAMICS */
+        .btn-rak {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.2);
+        }
+
+        .btn-rak:hover {
+            background: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%);
+            box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-info {
+            padding: 35px 30px;
+            background: white;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .contact-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        .contact-item i {
+            color: #1a3a8f;
+            font-size: 1.3rem;
+            width: 30px;
+        }
+
+        .visa-badge {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+            margin-top: 15px;
+        }
+
+        /* ===== RAK CERAMICS BADGE ===== */
+        .rak-badge {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .rak-badge img {
+            width: 20px;
+            height: auto;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 20px;
+            }
+            
+            header {
+                padding: 40px 20px 30px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .buttons {
+                grid-template-columns: 1fr;
+                padding: 40px 25px;
+                gap: 20px;
+            }
+            
+            .btn {
+                padding: 18px 20px;
+            }
+            
+            .contact-items {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .title {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+                min-height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img" onerror="this.src='https://via.placeholder.com/180x180/1a3a8f/ffffff?text=SM'">
+            <h1>SUDESH MADUSHANKA</h1>
+            <div class="title">Administrative & Document Control Professional</div>
+            
+            <!-- RAK CERAMICS BADGE -->
+            <div class="rak-badge">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAK_Ceramics_logo.svg/240px-RAK_Ceramics_logo.svg.png" alt="RAK" style="width: 20px; height: auto;">
+                Currently at RAK CERAMICS UAE
+            </div>
+            
+            <div class="availability">Available for Opportunities</div>
+        </header>
+
+        <!-- BUTTONS SECTION -->
+        <div class="buttons">
+            <!-- RAK CERAMICS SPECIALIZED CV -->
+            <a href="cv-rak-ceramics.html" class="btn btn-rak">
+                <i class="fas fa-building"></i>
+                <div>
+                    <div style="font-weight: bold; font-size: 1.2rem;">RAK CERAMICS CV</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Specialized for Internal Applications</div>
+                </div>
+            </a>
+
+            <!-- PROFESSIONAL CV -->
+            <a href="cv-portfolio.html" class="btn">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                    <div style="font-weight: bold; font-size: 1.2rem;">Professional CV</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Complete Work Experience</div>
+                </div>
+            </a>
+
+            <!-- RESUME -->
+            <a href="resume.html" class="btn">
+                <i class="fas fa-user-tie"></i>
+                <div>
+                    <div style="font-weight: bold; font-size: 1.2rem;">Resume</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Concise Version</div>
+                </div>
+            </a>
+
+            <!-- STANDARD CV -->
+            <a href="cv.html" class="btn">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                    <div style="font-weight: bold; font-size: 1.2rem;">Standard CV</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Traditional Format</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Your.Email@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+971 XX XXX XXXX</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Ras Al Khaimah, UAE</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/yourprofile</span>
+                </div>
+            </div>
+            
+            <div class="visa-badge">
+                <i class="fas fa-passport"></i> UAE Employment Visa Holder
+            </div>
+            
+            <!-- NOTE ABOUT RAK CERAMICS CV -->
+            <p style="margin-top: 25px; color: #666; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <strong>Note:</strong> The <span style="color: #d32f2f; font-weight: bold;">RAK CERAMICS CV</span> includes PDF download functionality and is specifically tailored for administrative/document control positions within RAK CERAMICS UAE.
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Add hover effect to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+        
+        // Add click animation
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+        
+        // Console welcome message
+        console.log('🎯 Sudesh Madushanka Portfolio | RAK CERAMICS Specialized CV Available');
+    </script>
+</body>
+</html>
