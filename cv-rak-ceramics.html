@@ -3,953 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV for RAK CERAMICS | Sudesh Madushanka</title>
+    <title>Sudesh Madhushanka - CV | RAK Ceramics</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    
+    <!-- html2pdf Library (will be added in script) -->
+    
     <style>
-        /* ===== GENERAL STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
+        
         .cv-container {
+            max-width: 1000px;
+            margin: 30px auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             padding: 40px;
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-
-        .cv-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #1a3a8f, #d32f2f, #0288d1);
-        }
-
-        /* ===== TOP ACTION BAR ===== */
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .header-section {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px;
+            border-radius: 10px 10px 0 0;
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eaeaea;
-            flex-wrap: wrap;
-            gap: 20px;
         }
-
-        .rak-file-number {
-            background: linear-gradient(135deg, #ff9800, #f57c00);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .top-download-btn {
-            background: linear-gradient(135deg, #1a3a8f, #2d5cc2);
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(26, 58, 143, 0.3);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .top-download-btn:hover {
-            background: linear-gradient(135deg, #2d5cc2, #3a6ee0);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(26, 58, 143, 0.4);
-        }
-
-        /* ===== HEADER SECTION ===== */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .profile-section {
-            flex: 1;
-            min-width: 300px;
-        }
-
+        
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #1a3a8f;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .profile-info h1 {
-            color: #1a3a8f;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .profile-info .title {
-            color: #d32f2f;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .profile-info .experience {
-            color: #555;
-            font-size: 1.2rem;
-            background: #f8f9fa;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        /* QR CODE SECTION */
-        .qr-section {
-            text-align: center;
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px solid #1a3a8f;
-            min-width: 250px;
-        }
-
-        #qrcode {
-            margin: 0 auto 15px;
             width: 150px;
             height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
         }
-
-        .qr-label {
-            color: #1a3a8f;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .qr-note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        /* ===== CONTACT INFO ===== */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            background: #f0f7ff;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid #1a3a8f;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.1rem;
-        }
-
-        .contact-item i {
-            color: #1a3a8f;
-            font-size: 1.3rem;
-            width: 25px;
-        }
-
-        .contact-item a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #d32f2f;
-            text-decoration: underline;
-        }
-
-        .visa-status {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        /* ===== RAK HIGHLIGHT SECTION ===== */
-        .rak-highlight {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
-            border: 3px solid #ff9800;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .rak-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #ff9800, #f57c00, #e65100);
-        }
-
-        .rak-highlight h2 {
-            color: #e65100;
-            margin-bottom: 15px;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .rak-highlight p {
-            font-size: 1.3rem;
-            color: #333;
-            line-height: 1.8;
-            margin-top: 15px;
-        }
-
-        .rak-highlight strong {
-            color: #d32f2f;
-            font-size: 1.4rem;
-        }
-
-        /* ===== WORK EXPERIENCE ===== */
+        
         .section-title {
-            color: #1a3a8f;
-            font-size: 1.8rem;
-            margin: 40px 0 25px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #1a3a8f;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-title i {
-            color: #d32f2f;
-            font-size: 1.5rem;
-        }
-
-        .experience-item {
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        /* RAK CERAMICS EXPERIENCE */
-        .rak-experience {
-            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
-            border-left: 10px solid #d32f2f;
-            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.15);
-        }
-
-        .company-header {
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .company-header h3 {
-            color: #d32f2f;
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .company {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .company i {
-            color: #d32f2f;
-        }
-
-        .duration {
-            color: #666;
-            font-style: italic;
-            background: #fff;
-            padding: 8px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            font-size: 1rem;
-            border: 2px solid #ddd;
-            margin-top: 10px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
-
-        .responsibilities {
-            margin-left: 30px;
-            padding-left: 25px;
-            border-left: 4px dashed #aaa;
+        
+        .skill-item, .language-item {
+            margin-bottom: 10px;
         }
-
-        .responsibilities li {
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: #444;
-            position: relative;
-            padding-left: 15px;
-            font-size: 1.05rem;
-        }
-
-        .responsibilities li::before {
-            content: '✓';
-            color: #4caf50;
-            font-weight: bold;
-            position: absolute;
-            left: -25px;
-            font-size: 1.4rem;
-            background: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #4caf50;
-        }
-
-        /* RDA EXPERIENCE */
-        .rda-experience {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-left: 10px solid #388e3c;
-            box-shadow: 0 10px 25px rgba(56, 142, 60, 0.15);
-        }
-
-        /* ===== SKILLS SECTION ===== */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            border-top: 6px solid #1a3a8f;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-category h4 {
-            color: #1a3a8f;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            margin-bottom: 15px;
-            padding: 12px 18px;
-            background: white;
-            border-radius: 10px;
-            border-left: 5px solid #1a3a8f;
-            transition: all 0.3s ease;
-            font-size: 1.05rem;
-        }
-
-        .skill-list li:hover {
-            transform: translateX(10px);
-            background: #f0f7ff;
-            box-shadow: 0 5px 15px rgba(26, 58, 143, 0.1);
-        }
-
-        /* ===== BOTTOM PDF DOWNLOAD SECTION ===== */
-        .pdf-section {
-            text-align: center;
-            margin: 60px 0 40px;
-            padding: 40px;
-            background: linear-gradient(to right, #e3f2fd, #f3e5f5);
-            border-radius: 20px;
-            border: 4px dashed #1a3a8f;
-            position: relative;
-        }
-
+        
         .download-btn {
-            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
             color: white;
             border: none;
-            padding: 20px 45px;
-            font-size: 1.3rem;
+            padding: 12px 25px;
             border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .download-btn:hover {
-            background: linear-gradient(135deg, #b71c1c, #8b0000);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(211, 47, 47, 0.4);
-        }
-
-        .download-note {
-            margin-top: 20px;
-            color: #666;
-            font-size: 1.1rem;
-            font-style: italic;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 3px solid #eee;
-            color: #777;
-            font-size: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #1a3a8f;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background: #f8f9fa;
-            transition: all 0.3s ease;
             font-weight: 600;
+            transition: all 0.3s;
+            margin: 10px;
         }
-
-        .footer-links a:hover {
-            color: #d32f2f;
-            background: #f0f7ff;
+        
+        .download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
         }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 992px) {
-            .header {
-                flex-direction: column;
-            }
-            
-            .qr-section {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
+        
+        .download-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
         }
-
-        @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 15px;
-            }
-            
-            .rak-file-number, .top-download-btn {
-                width: 100%;
-                justify-content: center;
-                text-align: center;
-            }
-            
-            .profile-img {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .profile-info h1 {
-                font-size: 2.2rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .cv-container {
-                padding: 25px;
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
+        
+        .contact-info i {
+            color: #3498db;
+            width: 25px;
         }
-
-        @media (max-width: 480px) {
-            .profile-info h1 {
-                font-size: 1.9rem;
-            }
-            
-            .rak-highlight h2 {
-                font-size: 1.6rem;
-            }
-            
-            .download-btn, .top-download-btn {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            
-            .footer-links a {
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
+        
+        .qr-container {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="cv-container" id="cvContent">
-        <!-- TOP ACTION BAR -->
-        <div class="top-bar">
-            <div class="rak-file-number">
-                <i class="fas fa-file-alt"></i>
-                RAK CERAMICS File No: 99018571
+    <div class="container mt-4 mb-4 no-print">
+        <div class="text-center">
+            <h2 class="mb-4">Sudesh Madhushanka - CV</h2>
+            <div class="mb-3">
+                <button id="topbtn" class="download-btn">
+                    <i class="fas fa-download me-2"></i>Download PDF
+                </button>
+                <button id="bottombtn" class="download-btn">
+                    <i class="fas fa-file-pdf me-2"></i>Save as PDF
+                </button>
             </div>
-            <button id="topDownloadPdf" class="top-download-btn">
-                <i class="fas fa-download"></i> Download CV as PDF
-            </button>
-        </div>
-
-        <!-- HEADER SECTION WITH QR -->
-        <div class="header">
-            <div class="profile-section">
-                <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img" onerror="this.src='https://via.placeholder.com/160x160/1a3a8f/ffffff?text=SM'">
-                <div class="profile-info">
-                    <h1>Sudesh Madushanka</h1>
-                    <p class="title">Administrative & Document Control Professional</p>
-                    <p class="experience">19+ Years Experience | RAK CERAMICS UAE | RDA Sri Lanka</p>
-                </div>
-            </div>
-            
-            <!-- QR CODE SECTION -->
-            <div class="qr-section">
-                <span class="qr-label">Scan for Digital CV</span>
-                <div id="qrcode"></div>
-                <div class="qr-note">Scan this QR code to access this digital CV</div>
-            </div>
-        </div>
-
-        <!-- CONTACT INFORMATION -->
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+971568840769">+971 56 884 0769</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Al Hamra, Al Jazeera, Ras Al Khaimah, UAE</span>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <a href="https://linkedin.com/in/sudhesh-madushanka-588332284" target="_blank">linkedin.com/in/sudhesh-madushanka-588332284</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-globe"></i>
-                <a href="https://sudeshmadushanka-blip.github.io/portfolio-website-/" target="_blank">sudeshmadushanka-blip.github.io/portfolio-website-</a>
-            </div>
-            <div class="visa-status">
-                <i class="fas fa-passport"></i> Employment Visa | Available Immediately
-            </div>
-        </div>
-
-        <!-- RAK HIGHLIGHT SECTION -->
-        <div class="rak-highlight">
-            <h2>Currently Enhancing Operations at RAK CERAMICS UAE</h2>
-            <p>Seeking to transition into <strong>Administrative / Document Control Role</strong> within RAK CERAMICS</p>
-        </div>
-
-        <!-- WORK EXPERIENCE SECTION -->
-        <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
-
-        <!-- RAK CERAMICS EXPERIENCE -->
-        <div class="experience-item rak-experience">
-            <div class="company-header">
-                <h3>Operations Support Assistant</h3>
-                <p class="company"><i class="fas fa-building"></i> RAK CERAMICS – Ras Al Khaimah, United Arab Emirates</p>
-                <p class="duration">August 2024 – Present</p>
-            </div>
-            <ul class="responsibilities">
-                <li>Supporting daily production operations in one of the world's largest ceramic manufacturing facilities with global operations.</li>
-                <li>Assisting in document control, process tracking, and workflow coordination within a fast-paced industrial environment.</li>
-                <li>Demonstrating adaptability, attention to detail, and commitment to quality standards in a multinational corporation.</li>
-                <li>Collaborating with cross-functional teams including production, logistics, and quality control to ensure smooth operational flow.</li>
-                <li>Gaining hands-on experience in industrial processes, quality assurance, and operational documentation systems.</li>
-                <li>Eager to transition into a formal <strong>Administrative Assistant or Document Controller</strong> role, leveraging 19+ years of prior experience in document management and administrative support.</li>
-            </ul>
-        </div>
-
-        <!-- RDA EXPERIENCE -->
-        <div class="experience-item rda-experience">
-            <div class="company-header">
-                <h3>Administrative Clerk / Document Controller</h3>
-                <p class="company"><i class="fas fa-road"></i> Road Development Authority (RDA) – Colombo, Sri Lanka</p>
-                <p class="duration">November 2004 – September 2023 (19 Years)</p>
-            </div>
-            <ul class="responsibilities">
-                <li>Managed comprehensive document control systems for national infrastructure projects valued over $500 million.</li>
-                <li>Coordinated administrative operations, record keeping, and correspondence for engineering departments with 50+ staff.</li>
-                <li>Prepared and maintained project documentation, reports, and regulatory compliance files for government audits.</li>
-                <li>Assisted in tender documentation, contract administration, and project tracking for highway and bridge constructions.</li>
-                <li>Implemented efficient filing and retrieval systems for thousands of documents, improving access time by 40%.</li>
-                <li>Trained 5 junior staff members in document control procedures and administrative best practices.</li>
-            </ul>
-        </div>
-
-        <!-- SKILLS SECTION -->
-        <h2 class="section-title"><i class="fas fa-star"></i> Core Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h4><i class="fas fa-file-alt"></i> Document Control</h4>
-                <ul class="skill-list">
-                    <li>Document Management Systems</li>
-                    <li>Record Keeping & Archiving</li>
-                    <li>Compliance Documentation</li>
-                    <li>Report Preparation</li>
-                    <li>Data Entry & Verification</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4><i class="fas fa-desktop"></i> Technical Skills</h4>
-                <ul class="skill-list">
-                    <li>MS Office Suite (Advanced Excel, Word, PowerPoint)</li>
-                    <li>Email & Calendar Management</li>
-                    <li>Basic ERP Systems</li>
-                    <li>Google Workspace</li>
-                    <li>Digital Filing Systems</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4><i class="fas fa-cogs"></i> Administrative Skills</h4>
-                <ul class="skill-list">
-                    <li>Office Coordination</li>
-                    <li>Process Improvement</li>
-                    <li>Multitasking & Prioritization</li>
-                    <li>Team Collaboration</li>
-                    <li>Communication & Liaison</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- BOTTOM PDF DOWNLOAD SECTION -->
-        <div class="pdf-section">
-            <button id="bottomDownloadPdf" class="download-btn">
-                <i class="fas fa-download"></i> Download CV as PDF
-            </button>
-            <p class="download-note">This PDF includes RAK CERAMICS specialized experience for internal applications</p>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <p>CV Prepared for RAK CERAMICS Internal Applications | Updated: February 2025 | File No: 99018571</p>
-            <div class="footer-links">
-                <a href="https://sudeshmadushanka-blip.github.io/portfolio-website-/"><i class="fas fa-globe"></i> Portfolio Website</a>
-                <a href="cv.html"><i class="fas fa-file"></i> Standard CV</a>
-                <a href="resume.html"><i class="fas fa-user-tie"></i> Resume</a>
-                <a href="cv-portfolio.html"><i class="fas fa-briefcase"></i> Professional CV</a>
+            <div class="qr-container" id="qrContainer">
+                <!-- QR Code will be generated here -->
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        // Generate QR Code for Portfolio Website
-        const portfolioUrl = "https://sudeshmadushanka-blip.github.io/portfolio-website-/";
-        QRCode.toCanvas(document.getElementById('qrcode'), portfolioUrl, {
-            width: 150,
-            height: 150,
-            color: {
-                dark: '#1a3a8f',
-                light: '#ffffff'
-            }
-        }, function(error) {
-            if (error) {
-                console.error('QR Code generation error:', error);
-                document.getElementById('qrcode').innerHTML = 
-                    '<div style="text-align:center; color:#666; padding:20px;">' +
-                    '<i class="fas fa-qrcode" style="font-size:50px; color:#ccc; margin-bottom:10px;"></i><br>' +
-                    '<a href="' + portfolioUrl + '" style="color:#1a3a8f; text-decoration:none;">' +
-                    'Portfolio Link</a></div>';
-            }
-        });
+    <div class="cv-container" id="cv-content">
+        <!-- Header Section -->
+        <div class="header-section text-center">
+            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img mb-3">
+            <h1>SUDESH MADHUSHANKA</h1>
+            <h4><i class="fas fa-briefcase me-2"></i>Administrative Professional</h4>
+            <p class="mb-0">RAK Ceramics UAE | Document Controller & Administrator</p>
+        </div>
 
-        // PDF Download Function - FIXED VERSION
-        function downloadPDF() {
-            const element = document.getElementById('cvContent');
-            const originalTopBtn = document.getElementById('topDownloadPdf').innerHTML;
-            const originalBottomBtn = document.getElementById('bottomDownloadPdf').innerHTML;
-            
-            // Change button texts to loading
-            document.getElementById('topDownloadPdf').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
-            document.getElementById('bottomDownloadPdf').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
-            document.getElementById('topDownloadPdf').disabled = true;
-            document.getElementById('bottomDownloadPdf').disabled = true;
-            
-            // Fix for html2pdf.js - Ensure proper configuration
-            const opt = {
-                margin:       10,
-                filename:     'Sudesh_Madushanka_RAK_CERAMICS_CV_99018571.pdf',
-                image:        { 
-                    type: 'jpeg', 
-                    quality: 1 
-                },
-                html2canvas:  { 
-                    scale: 3,
-                    useCORS: true,
-                    backgroundColor: '#ffffff',
-                    logging: false,
-                    allowTaint: true,
-                    letterRendering: true
-                },
-                jsPDF:        { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait',
-                    compress: true
-                }
-            };
-
-            // Generate PDF with error handling
-            try {
-                html2pdf().set(opt).from(element).save().then(() => {
-                    // Restore buttons
-                    document.getElementById('topDownloadPdf').innerHTML = originalTopBtn;
-                    document.getElementById('bottomDownloadPdf').innerHTML = originalBottomBtn;
-                    document.getElementById('topDownloadPdf').disabled = false;
-                    document.getElementById('bottomDownloadPdf').disabled = false;
-                    
-                    // Show success message
-                    alert('✅ CV downloaded successfully as PDF!\nFile: Sudesh_Madushanka_RAK_CERAMICS_CV_99018571.pdf\n\nReady for RAK CERAMICS submission.');
-                }).catch(err => {
-                    console.error('PDF generation error:', err);
-                    alert('❌ Error generating PDF. Please try again.\nError: ' + err.message);
-                    restoreButtons();
-                });
-            } catch (err) {
-                console.error('PDF generation error:', err);
-                alert('❌ Error generating PDF. Please check console for details.');
-                restoreButtons();
-            }
-
-            function restoreButtons() {
-                document.getElementById('topDownloadPdf').innerHTML = originalTopBtn;
-                document.getElementById('bottomDownloadPdf').innerHTML = originalBottomBtn;
-                document.getElementById('topDownloadPdf').disabled = false;
-                document.getElementById('bottomDownloadPdf').disabled = false;
-            }
-        }
-
-        // Add event listeners to both download buttons
-        document.getElementById('topDownloadPdf').addEventListener('click', downloadPDF);
-        document.getElementById('bottomDownloadPdf').addEventListener('click', downloadPDF);
-        
-        // Add click animation to experience items
-        document.querySelectorAll('.experience-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.995)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
-
-        // Console message
-        console.log('🎯 RAK CERAMICS CV | File No: 99018571 | Portfolio QR Code Active');
-        console.log('📱 Contact: +971 56 884 0769 | Email: sudheshmadushanka@gmail.com');
-        <!-- JAVASCRIPT FOR LINE 850 - COMPLETE WORKING VERSION -->
-    <script>
-        // Generate QR Code for Portfolio Website
-        const portfolioUrl = "https://sudeshmadushanka-blip.github.io/portfolio-website-/";
-        
-        // Simple QR Code
-        const qrContainer = document.getElementById('qrcode');
-        if (qrContainer) {
-            qrContainer.innerHTML = `
-                <div style="text-align:center;">
-                    <div style="width:150px; height:150px; margin:0 auto 15px; background:#f0f0f0; border-radius:10px; display:flex; align-items:center; justify-content:center;">
-                        <i class="fas fa-qrcode" style="font-size:60px; color:#1a3a8f;"></i>
-                    </div>
-                    <a href="${portfolioUrl}" target="_blank" style="color:#1a3a8f; text-decoration:none; font-weight:bold;">
-                        Portfolio Website
-                    </a>
+        <!-- Contact Information -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Contact Information</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +971 56 884 0769</p>
+                    <p><i class="fas fa-envelope"></i> sudeshmadhushanka@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ras Al Khaimah, United Arab Emirates</p>
+                    <p><i class="fab fa-linkedin"></i> linkedin.com/in/sudesh-madhushanka</p>
                 </div>
-            `;
+            </div>
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-user-tie me-2"></i>Professional Summary</h4>
+                <p>Experienced Administrative Professional with over 5 years of expertise in document control, office administration, and customer service within the construction and ceramics industry. Proficient in streamlining administrative processes and maintaining efficient document management systems.</p>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="mb-4">
+            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Work Experience</h4>
+            
+            <div class="mb-3">
+                <h5>RAK Ceramics PJSC, Ras Al Khaimah, UAE</h5>
+                <p><strong>Document Controller & Administrator</strong> | 2020 - Present</p>
+                <ul>
+                    <li>Manage and maintain all project documentation including contracts, drawings, and specifications</li>
+                    <li>Implement document control procedures in compliance with company standards</li>
+                    <li>Coordinate with project managers, engineers, and contractors for document submission</li>
+                    <li>Prepare monthly reports on document status and project progress</li>
+                    <li>Maintain electronic and hard copy filing systems</li>
+                </ul>
+            </div>
+            
+            <div class="mb-3">
+                <h5>Previous Administrative Roles</h5>
+                <p><strong>Administrative Assistant</strong> | 2018 - 2020</p>
+                <ul>
+                    <li>Managed office correspondence and communications</li>
+                    <li>Assisted in HR documentation and employee records management</li>
+                    <li>Coordinated meetings and prepared minutes</li>
+                    <li>Handled inventory and office supply management</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mb-4">
+            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education</h4>
+            <div class="mb-3">
+                <h5>Bachelor of Business Administration (BBA)</h5>
+                <p>University of Colombo, Sri Lanka | 2014 - 2018</p>
+                <p>Specialization: Human Resource Management</p>
+            </div>
+            
+            <div class="mb-3">
+                <h5>Professional Certifications</h5>
+                <ul>
+                    <li>Certified Document Controller (CDC)</li>
+                    <li>Microsoft Office Specialist (Excel, Word)</li>
+                    <li>Project Management Fundamentals</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-cogs me-2"></i>Technical Skills</h4>
+                <div class="skill-item">
+                    <p class="mb-1">Document Management Systems</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <p class="mb-1">Microsoft Office Suite</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <p class="mb-1">Data Entry & Management</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-info" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <p class="mb-1">Project Documentation</p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 92%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h4 class="section-title"><i class="fas fa-comments me-2"></i>Languages</h4>
+                <div class="language-item">
+                    <p class="mb-1">English <span class="float-end">Fluent</span></p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-primary" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <p class="mb-1">Sinhala <span class="float-end">Native</span></p>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-primary" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <h4 class="section-title mt-4"><i class="fas fa-users me-2"></i>Soft Skills</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <p><i class="fas fa-check text-success me-2"></i>Communication</p>
+                        <p><i class="fas fa-check text-success me-2"></i>Time Management</p>
+                        <p><i class="fas fa-check text-success me-2"></i>Teamwork</p>
+                    </div>
+                    <div class="col-6">
+                        <p><i class="fas fa-check text-success me-2"></i>Problem Solving</p>
+                        <p><i class="fas fa-check text-success me-2"></i>Attention to Detail</p>
+                        <p><i class="fas fa-check text-success me-2"></i>Adaptability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- References -->
+        <div class="mb-4">
+            <h4 class="section-title"><i class="fas fa-handshake me-2"></i>References</h4>
+            <p>Available upon request</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-4 pt-3 border-top">
+            <p class="text-muted">Last Updated: February 2026 | File No: 99018571</p>
+            <p class="text-muted"><i class="fas fa-exclamation-circle me-2"></i>This CV is generated from the official RAK Ceramics portfolio</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script>
+    // Generate QR Code for Portfolio Website
+    const portfolioUrl = "https://sudeshmadhushanka-a-blip.github.io/portfolio/";
+
+    // Simple QR Code implementation
+    const qrContainer = document.getElementById('qrContainer');
+    if (qrContainer) {
+        qrContainer.innerHTML = `
+            <div style="text-align:center">
+                <h5><i class="fas fa-qrcode me-2"></i>Scan for Portfolio</h5>
+                <div style="width:150px; margin:0 auto; padding:15px; background:white; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+                    <i class="fas fa-qrcode" style="font-size:80px; color:#2c3e50;"></i>
+                </div>
+                <a href="${portfolioUrl}" target="_blank" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-external-link-alt me-2"></i>Visit Portfolio Website
+                </a>
+            </div>
+        `;
+    }
+
+    // PDF Download Function
+    function downloadPDF() {
+        const element = document.getElementById('cv-content');
+        const topBtn = document.getElementById('topbtn');
+        const bottomBtn = document.getElementById('bottombtn');
+
+        if (!topBtn || !bottomBtn || !element) {
+            alert('Please wait for page to load completely.');
+            return;
         }
 
-        // PDF Download Function - WORKING VERSION
-        function downloadPDF() {
-            const element = document.getElementById('cvContent');
-            const topBtn = document.getElementById('topDownloadPdf');
-            const bottomBtn = document.getElementById('bottomDownloadPdf');
-            
-            if (!topBtn || !bottomBtn) {
-                alert('Please wait for page to load completely');
-                return;
-            }
-            
-            const originalTopText = topBtn.innerHTML;
-            const originalBottomText = bottomBtn.innerHTML;
-            
-            // Show loading
-            topBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-            bottomBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
-            topBtn.disabled = true;
-            bottomBtn.disabled = true;
-            
-            // PDF Options
-            const opt = {
-                margin:       10,
-                filename:     'Sudesh_Madushanka_RAK_CERAMICS_CV.pdf',
-                image:        { type: 'jpeg', quality: 0.95 },
-                html2canvas:  { 
-                    scale: 2,
-                    useCORS: true,
-                    backgroundColor: '#ffffff'
-                },
-                jsPDF:        { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait'
-                }
-            };
+        const originalTopText = topBtn.innerHTML;
+        const originalBottomText = bottomBtn.innerHTML;
 
-            // Generate PDF
-            html2pdf().set(opt).from(element).save()
-                .then(() => {
-                    // Restore buttons
-                    topBtn.innerHTML = originalTopText;
-                    bottomBtn.innerHTML = originalBottomText;
-                    topBtn.disabled = false;
-                    bottomBtn.disabled = false;
-                    
-                    // Success message
-                    setTimeout(() => {
-                        alert('✅ CV downloaded successfully!\nFile: Sudesh_Madushanka_RAK_CERAMICS_CV.pdf');
-                    }, 300);
-                })
-                .catch(err => {
-                    console.log('PDF download error:', err);
-                    
-                    // Restore buttons
-                    topBtn.innerHTML = originalTopText;
-                    bottomBtn.innerHTML = originalBottomText;
-                    topBtn.disabled = false;
-                    bottomBtn.disabled = false;
-                    
-                    // Alternative method
-                    alert('✅ PDF download started. If not, try:\n1. Allow pop-ups\n2. Check downloads folder\n3. Try Chrome browser');
-                });
-        }
+        // Show loading state
+        topBtn.disabled = true;
+        bottomBtn.disabled = true;
+        topBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+        bottomBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
 
-        // Add event listeners
-        document.getElementById('topDownloadPdf').addEventListener('click', downloadPDF);
-        document.getElementById('bottomDownloadPdf').addEventListener('click', downloadPDF);
-        
         // Add click animation
-        document.querySelectorAll('.experience-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.99)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
+        topBtn.style.transform = 'scale(0.95)';
+        bottomBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            topBtn.style.transform = '';
+            bottomBtn.style.transform = '';
+        }, 200);
 
+        // PDF Options
+        const opt = {
+            margin: 10,
+            filename: 'Sudesh_Madhushanka_RAK_Ceramics_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: {
+                scale: 2,
+                useCORS: true,
+                backgroundColor: '#ffffff',
+                logging: false,
+                scrollY: 0
+            },
+            jsPDF: {
+                unit: 'mm',
+                format: 'a4',
+                orientation: 'portrait'
+            }
+        };
+
+        // Generate PDF
+        html2pdf().set(opt).from(element)
+            .then(() => {
+                // Restore buttons
+                topBtn.innerHTML = originalTopText;
+                bottomBtn.innerHTML = originalBottomText;
+                topBtn.disabled = false;
+                bottomBtn.disabled = false;
+
+                // Success message
+                setTimeout(() => {
+                    alert('✅ CV downloaded successfully! 🎉');
+                }, 500);
+            })
+            .catch(err => {
+                console.error('PDF download failed:', err);
+
+                // Restore buttons
+                topBtn.innerHTML = originalTopText;
+                bottomBtn.innerHTML = originalBottomText;
+                topBtn.disabled = false;
+                bottomBtn.disabled = false;
+
+                // Error message
+                alert('⚠️ PDF download failed. Please try again or use print (Ctrl+P).');
+            });
+    }
+
+    // Add event listeners for PDF download buttons
+    document.addEventListener('DOMContentLoaded', function() {
+        const topDownloadBtn = document.getElementById('topbtn');
+        const bottomDownloadBtn = document.getElementById('bottombtn');
+
+        if (topDownloadBtn) {
+            topDownloadBtn.addEventListener('click', downloadPDF);
+        }
+        if (bottomDownloadBtn) {
+            bottomDownloadBtn.addEventListener('click', downloadPDF);
+        }
+        
         // Console message
-        console.log('✅ RAK CERAMICS CV Loaded');
-        console.log('📧 Contact: +971 56 884 0769');
-        console.log('📧 Email: sudheshmadushanka@gmail.com');
+        console.log('😊 RAK CERAMICS CV | File No: 99018571 | Portfolio QR Code Active');
+        console.log('📧 Contact: +971 56 884 0769 | Email: sudeshmadhushanka@gmail.com');
+        console.log('✅ PDF download function is active');
+    });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- html2pdf Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
-</html>
+    </html>    
