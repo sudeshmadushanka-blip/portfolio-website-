@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.M.S. Madushanka - Document Controller | 19 Years RDA Experience</title>
+    <title>S.M.S. Madushanka - Operations Support Assistant | RAK Ceramics</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            background: #1a5276;
+            background: #2c3e50;
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -41,28 +41,53 @@
             font-weight: bold;
         }
         
-        .rda-header {
-            background: linear-gradient(135deg, #1a5276, #2e86c1);
+        .rak-header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
             color: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 30px;
             text-align: center;
-            border-bottom: 5px solid #f39c12;
+            border-bottom: 5px solid #e74c3c;
+        }
+        
+        .rak-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
         }
         
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
             border: 5px solid white;
             object-fit: cover;
             margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .profile-frame {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .profile-badge {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
         }
         
         .section-title {
-            color: #1a5276;
-            border-bottom: 3px solid #f39c12;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-weight: 600;
@@ -85,7 +110,7 @@
             box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
         }
         
-        .service-badge {
+        .experience-badge {
             background: #e8f4fc;
             border-left: 4px solid #3498db;
             padding: 12px 15px;
@@ -93,36 +118,22 @@
             border-radius: 5px;
         }
         
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 25px;
-        }
-        
-        .timeline-item:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #27ae60;
+        .department-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: bold;
-            font-size: 18px;
-        }
-        
-        .official-note {
-            background: #fdf2f2;
-            border: 2px dashed #e74c3c;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            text-align: center;
+            display: inline-block;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container mt-4 mb-4">
         <div class="text-center">
-            <h2 class="mb-4">S.M.S. Madushanka - 19 Years RDA Experience</h2>
+            <h2 class="mb-4">S.M.S. Madushanka - RAK Ceramics CV</h2>
             <div class="mb-3">
                 <button id="topbtn" class="download-btn">
                     <i class="fas fa-download me-2"></i>Download PDF
@@ -140,118 +151,109 @@
     <div class="cv-container" id="cv-content">
         <!-- Official File Number -->
         <div class="file-number">
-            <i class="fas fa-file-certificate me-2"></i>File No: 99018571
+            <i class="fas fa-file-alt me-2"></i>File No: 99018571
         </div>
         
-        <!-- Header -->
-        <div class="rda-header">
-            <img src="https://ui-avatars.com/api/?name=SMS+Madushanka&background=1a5276&color=fff&size=150&bold=true" 
-                 alt="Profile Photo" class="profile-img">
+        <!-- RAK Ceramics Header -->
+        <div class="rak-header">
+            <div class="rak-logo">RAK CERAMICS PJSC</div>
+            <p class="mb-2">OFFICIAL EMPLOYEE RECORD</p>
+            <hr style="border-color: rgba(255,255,255,0.3); margin: 15px 0;">
+            
+            <div class="profile-frame">
+                <img src="https://via.placeholder.com/180x180/2c3e50/ffffff?text=SMS" 
+                     alt="S.M.S. Madushanka Photo" class="profile-img">
+                <div class="profile-badge">ID: 99018571</div>
+            </div>
+            
             <h1>S.M.S. MADUSHANKA SAMARAKOON</h1>
-            <h4><i class="fas fa-user-tie me-2"></i>Document Controller & Administrative Professional</h4>
-            <p class="mb-0"><i class="fas fa-building me-2"></i>19 Years at Road Development Authority (RDA), Sri Lanka</p>
-            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Currently in Ras Al Khaimah, UAE</p>
-        </div>
-
-        <!-- IMPORTANT NOTE -->
-        <div class="official-note">
-            <h5><i class="fas fa-exclamation-triangle me-2"></i>CORRECTION NOTICE</h5>
-            <p class="mb-0">Previous version incorrectly stated RAK Ceramics employment. This has been corrected to reflect <strong>19 years of verified service at Road Development Authority (RDA), Sri Lanka</strong>.</p>
+            <h4><i class="fas fa-user-tie me-2"></i>Operations Support Assistant</h4>
+            <p class="mb-0"><i class="fas fa-building me-2"></i>Canary Shorting Department</p>
+            <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>RAK Ceramics UAE, Ras Al Khaimah</p>
         </div>
 
         <!-- Contact Information -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Contact Information</h4>
+                <h4 class="section-title"><i class="fas fa-address-card me-2"></i>Employee Information</h4>
                 <div class="contact-info">
                     <p><i class="fas fa-phone me-2"></i> +971 56 884 0769</p>
                     <p><i class="fas fa-envelope me-2"></i> sudheshmadushanka@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Al Hamra, Al Jazeera, Ras Al Khaimah, UAE</p>
+                    <p><i class="fas fa-id-card me-2"></i> RAK Employee ID: 99018571</p>
                     <p><i class="fab fa-linkedin me-2"></i> linkedin.com/in/sudhesh-madushanka-588332284</p>
-                    <p><i class="fas fa-passport me-2"></i> Visa Status: Employment Visa | Available: Immediately</p>
+                    <p><i class="fas fa-passport me-2"></i> Visa Status: Employment Visa</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <h4 class="section-title"><i class="fas fa-user-tie me-2"></i>Professional Summary</h4>
-                <p>Highly experienced <strong>Document Control and Administrative Professional</strong> with <strong>19 years</strong> of verified service at the <strong>Road Development Authority (RDA), Sri Lanka</strong>. Specialized in documentation management, filing systems, records control, data entry, and office coordination in a government organization.</p>
+                <p>Operations Support Assistant at RAK Ceramics UAE with extensive background in administrative support and document control. Leveraging 19 years of prior experience from Road Development Authority (RDA) Sri Lanka to ensure efficient operations in the Canary Shorting Department.</p>
                 <div class="alert alert-success mt-3">
-                    <i class="fas fa-award me-2"></i><strong>Official RDA Service Record:</strong> Efficiency: GOOD | General Conduct: GOOD
+                    <i class="fas fa-check-circle me-2"></i><strong>Current Employment:</strong> Actively working at RAK Ceramics UAE
                 </div>
             </div>
         </div>
 
-        <!-- RDA Service Record -->
+        <!-- Current Employment -->
         <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Road Development Authority Service (2004-2023)</h4>
+            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Current Employment</h4>
             
-            <div class="service-badge">
-                <h5><i class="fas fa-user-tie me-2"></i>Position: Administrative Clerk / Document Controller</h5>
-                <p class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Service Period: 09 November 2004 - 25 September 2023 (18 Years, 10 Months)</p>
+            <div class="experience-badge">
+                <h5>RAK Ceramics PJSC, Ras Al Khaimah, UAE</h5>
+                <p class="mb-1"><strong>Operations Support Assistant</strong> <span class="department-tag">Canary Shorting Department</span></p>
+                <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i>Present Position</p>
+                <p class="mb-0"><i class="fas fa-building me-2"></i>RAK Ceramics UAE, Ras Al Khaimah Industrial Zone</p>
             </div>
             
-            <h5><i class="fas fa-map-marker-alt me-2"></i>Service Locations:</h5>
-            
-            <div class="service-badge">
-                <h6><i class="fas fa-building me-2"></i>Provincial Director's Office - Uva</h6>
-                <p class="mb-0">09/11/2004 - 22/10/2007 (2 Years, 11 Months)</p>
+            <h5 class="mt-3">Responsibilities:</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><i class="fas fa-check text-success me-2"></i>Operational support for Canary Shorting Department</p>
+                    <p><i class="fas fa-check text-success me-2"></i>Document control and records management</p>
+                    <p><i class="fas fa-check text-success me-2"></i>Coordination with production teams</p>
+                </div>
+                <div class="col-md-6">
+                    <p><i class="fas fa-check text-success me-2"></i>Data entry and reporting</p>
+                    <p><i class="fas fa-check text-success me-2"></i>Quality control documentation</p>
+                    <p><i class="fas fa-check text-success me-2"></i>Administrative support functions</p>
+                </div>
             </div>
+        </div>
+
+        <!-- Previous Experience -->
+        <div class="mb-4">
+            <h4 class="section-title"><i class="fas fa-history me-2"></i>Previous Experience (19 Years)</h4>
             
-            <div class="service-badge">
-                <h6><i class="fas fa-building me-2"></i>Executive Engineer's Office - Badulla</h6>
-                <p class="mb-0">23/10/2007 - 09/03/2010 (2 Years, 4 Months)</p>
-            </div>
-            
-            <div class="service-badge">
-                <h6><i class="fas fa-building me-2"></i>Chief Engineer's Office - Kandy</h6>
-                <p class="mb-0">10/03/2010 - 19/04/2017 (7 Years, 1 Month)</p>
-            </div>
-            
-            <div class="service-badge">
-                <h6><i class="fas fa-building me-2"></i>Executive Engineer's Office - Kadugannawa</h6>
-                <p class="mb-0">20/04/2017 - 25/09/2023 (6 Years, 5 Months)</p>
+            <div class="experience-badge">
+                <h5>Road Development Authority (RDA) – Sri Lanka</h5>
+                <p class="mb-1"><strong>Administrative Clerk / Document Controller</strong></p>
+                <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i>November 2004 – September 2023 (19 Years)</p>
+                <p class="mb-0"><strong>Service Record:</strong> Efficiency: GOOD | General Conduct: GOOD</p>
             </div>
             
             <div class="alert alert-info mt-3">
                 <i class="fas fa-file-contract me-2"></i>
-                <strong>Official RDA Service Letter Available:</strong> This service record is verified by RDA Director (HR General & Expressways)
+                <strong>Note:</strong> 19 years of government service experience from RDA, Sri Lanka provides strong foundation for current role at RAK Ceramics.
             </div>
         </div>
 
-        <!-- Key Responsibilities -->
-        <div class="mb-4">
-            <h4 class="section-title"><i class="fas fa-tasks me-2"></i>Key Responsibilities at RDA</h4>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="timeline-item">Document Control & Management Systems</div>
-                    <div class="timeline-item">Technical Documentation & Engineering Drawings</div>
-                    <div class="timeline-item">Government Correspondence & Report Preparation</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="timeline-item">Records Management & Archiving Systems</div>
-                    <div class="timeline-item">Public Relations & Customer Service</div>
-                    <div class="timeline-item">Data Entry & Database Management</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Education & Certifications -->
+        <!-- Education & Skills -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education & Training</h4>
+                <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education & Certifications</h4>
                 
-                <div class="service-badge">
+                <div class="experience-badge">
                     <h6>National Certificate - Engineering Draughtsmanship</h6>
-                    <p class="mb-0">Technical College, Nuwara Eliya | 2002 | Index No: 0207234</p>
+                    <p class="mb-0">Technical College, Nuwara Eliya | 2002</p>
                 </div>
                 
-                <div class="service-badge">
+                <div class="experience-badge">
                     <h6>G.C.E. Ordinary Level - 1997</h6>
-                    <p class="mb-0">Index No: 74608568 | Buddhism (C), Sinhala (C), Maths (S)</p>
+                    <p class="mb-0">Index No: 74608568</p>
                 </div>
                 
-                <div class="service-badge">
-                    <h6>RDA Clerical Officers Training</h6>
-                    <p class="mb-0">March 2005 | Rules, Regulations, Office Procedures</p>
+                <div class="experience-badge">
+                    <h6>RDA Clerical Training - 2005</h6>
+                    <p class="mb-0">Road Development Authority, Sri Lanka</p>
                 </div>
             </div>
             
@@ -266,7 +268,7 @@
                 
                 <div>
                     <p><strong>Technical Skills:</strong></p>
-                    <p>MS Office Suite, Document Management Systems, Data Entry, Report Writing, Filing Systems</p>
+                    <p>MS Office, Document Management, Operational Support, Data Entry, Quality Control</p>
                 </div>
             </div>
         </div>
@@ -284,20 +286,20 @@
                     <p><i class="fas fa-id-card me-2"></i> <strong>National ID:</strong> 802952147V</p>
                 </div>
                 <div class="col-md-4">
-                    <p><i class="fas fa-map-pin me-2"></i> <strong>Current Location:</strong> UAE</p>
-                    <p><i class="fas fa-flag me-2"></i> <strong>Availability:</strong> Immediate Employment</p>
+                    <p><i class="fas fa-map-pin me-2"></i> <strong>Location:</strong> Ras Al Khaimah, UAE</p>
+                    <p><i class="fas fa-building me-2"></i> <strong>Employer:</strong> RAK Ceramics PJSC</p>
                 </div>
             </div>
         </div>
 
-        <!-- Verification Footer -->
+        <!-- Footer -->
         <div class="text-center mt-4 pt-3 border-top">
             <div class="alert alert-secondary">
-                <h5><i class="fas fa-file-contract me-2"></i>VERIFIED SERVICE RECORD</h5>
-                <p class="mb-0">This CV is based on Official RDA Service Letter issued by Director (HR General & Expressways)</p>
-                <p class="mb-0">All certificates and service documents available for verification</p>
+                <h5><i class="fas fa-file-contract me-2"></i>RAK CERAMICS EMPLOYEE RECORD</h5>
+                <p class="mb-0">Official Employee File No: 99018571 | Canary Shorting Department</p>
+                <p class="mb-0">Operations Support Assistant | RAK Ceramics UAE</p>
             </div>
-            <p class="text-muted">File Reference No: 99018571 | Updated: February 2026</p>
+            <p class="text-muted">Updated: February 2026 | For Internal Reference</p>
         </div>
     </div>
 
@@ -313,13 +315,13 @@
     if (qrContainer) {
         qrContainer.innerHTML = `
             <div style="text-align:center">
-                <h5><i class="fas fa-qrcode me-2"></i>Digital Portfolio</h5>
+                <h5><i class="fas fa-qrcode me-2"></i>RAK Ceramics Portfolio</h5>
                 <div style="width:150px; margin:0 auto; padding:15px; background:white; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-                    <i class="fas fa-qrcode" style="font-size:80px; color:#1a5276;"></i>
+                    <i class="fas fa-qrcode" style="font-size:80px; color:#2c3e50;"></i>
                 </div>
-                <p class="small text-muted mt-2">19 Years RDA Experience | File No: 99018571</p>
+                <p class="small text-muted mt-2">Employee ID: 99018571 | Canary Shorting Dept.</p>
                 <a href="${portfolioUrl}" target="_blank" class="btn btn-outline-primary mt-2">
-                    <i class="fas fa-external-link-alt me-2"></i>View Complete Portfolio
+                    <i class="fas fa-external-link-alt me-2"></i>View Digital Portfolio
                 </a>
             </div>
         `;
@@ -348,7 +350,7 @@
         // PDF Options
         const opt = {
             margin: 10,
-            filename: 'SMS_Madushanka_19Years_RDA_Service_CV.pdf',
+            filename: 'RAK_Ceramics_Employee_99018571_SMS_Madushanka.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: {
                 scale: 2,
@@ -375,7 +377,7 @@
 
                 // Success message
                 setTimeout(() => {
-                    alert('✅ 19 Years RDA Service CV downloaded successfully! 🎉');
+                    alert('✅ RAK Ceramics Employee CV downloaded successfully! 🎉');
                 }, 500);
             })
             .catch(err => {
@@ -405,12 +407,14 @@
         }
         
         // Console message
-        console.log('✅ CV Corrected: 19 Years RDA Experience (NOT RAK Ceramics)');
-        console.log('📞 Contact: +971 56 884 0769 | File No: 99018571');
+        console.log('🏢 RAK CERAMICS UAE - Employee Record');
+        console.log('👤 S.M.S. Madushanka | Operations Support Assistant');
+        console.log('🏭 Canary Shorting Department | Employee ID: 99018571');
+        console.log('📞 Contact: +971 56 884 0769');
     });
     </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-                </html>
+    </html>
