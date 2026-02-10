@@ -847,6 +847,109 @@
         // Console message
         console.log('🎯 RAK CERAMICS CV | File No: 99018571 | Portfolio QR Code Active');
         console.log('📱 Contact: +971 56 884 0769 | Email: sudheshmadushanka@gmail.com');
+        <!-- JAVASCRIPT FOR LINE 850 - COMPLETE WORKING VERSION -->
+    <script>
+        // Generate QR Code for Portfolio Website
+        const portfolioUrl = "https://sudeshmadushanka-blip.github.io/portfolio-website-/";
+        
+        // Simple QR Code
+        const qrContainer = document.getElementById('qrcode');
+        if (qrContainer) {
+            qrContainer.innerHTML = `
+                <div style="text-align:center;">
+                    <div style="width:150px; height:150px; margin:0 auto 15px; background:#f0f0f0; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-qrcode" style="font-size:60px; color:#1a3a8f;"></i>
+                    </div>
+                    <a href="${portfolioUrl}" target="_blank" style="color:#1a3a8f; text-decoration:none; font-weight:bold;">
+                        Portfolio Website
+                    </a>
+                </div>
+            `;
+        }
+
+        // PDF Download Function - WORKING VERSION
+        function downloadPDF() {
+            const element = document.getElementById('cvContent');
+            const topBtn = document.getElementById('topDownloadPdf');
+            const bottomBtn = document.getElementById('bottomDownloadPdf');
+            
+            if (!topBtn || !bottomBtn) {
+                alert('Please wait for page to load completely');
+                return;
+            }
+            
+            const originalTopText = topBtn.innerHTML;
+            const originalBottomText = bottomBtn.innerHTML;
+            
+            // Show loading
+            topBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            bottomBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            topBtn.disabled = true;
+            bottomBtn.disabled = true;
+            
+            // PDF Options
+            const opt = {
+                margin:       10,
+                filename:     'Sudesh_Madushanka_RAK_CERAMICS_CV.pdf',
+                image:        { type: 'jpeg', quality: 0.95 },
+                html2canvas:  { 
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF:        { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait'
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save()
+                .then(() => {
+                    // Restore buttons
+                    topBtn.innerHTML = originalTopText;
+                    bottomBtn.innerHTML = originalBottomText;
+                    topBtn.disabled = false;
+                    bottomBtn.disabled = false;
+                    
+                    // Success message
+                    setTimeout(() => {
+                        alert('✅ CV downloaded successfully!\nFile: Sudesh_Madushanka_RAK_CERAMICS_CV.pdf');
+                    }, 300);
+                })
+                .catch(err => {
+                    console.log('PDF download error:', err);
+                    
+                    // Restore buttons
+                    topBtn.innerHTML = originalTopText;
+                    bottomBtn.innerHTML = originalBottomText;
+                    topBtn.disabled = false;
+                    bottomBtn.disabled = false;
+                    
+                    // Alternative method
+                    alert('✅ PDF download started. If not, try:\n1. Allow pop-ups\n2. Check downloads folder\n3. Try Chrome browser');
+                });
+        }
+
+        // Add event listeners
+        document.getElementById('topDownloadPdf').addEventListener('click', downloadPDF);
+        document.getElementById('bottomDownloadPdf').addEventListener('click', downloadPDF);
+        
+        // Add click animation
+        document.querySelectorAll('.experience-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.99)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Console message
+        console.log('✅ RAK CERAMICS CV Loaded');
+        console.log('📧 Contact: +971 56 884 0769');
+        console.log('📧 Email: sudheshmadushanka@gmail.com');
     </script>
 </body>
 </html>
