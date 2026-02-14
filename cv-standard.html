@@ -1,1 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudesh Madushanka - Standard CV (Traditional & Creative)</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background: linear-gradient(145deg, #2b3a67 0%, #1b2a4e 100%);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main card */
+        .cv-standard-card {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 40px 40px 30px 30px;
+            box-shadow: 0 40px 70px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Colorful top stripe */
+        .color-stripe {
+            height: 16px;
+            background: linear-gradient(90deg, #ffd966, #ffb347, #ff8c42, #ff6b6b, #a569bd, #5dade2);
+            width: 100%;
+        }
+
+        /* Two-column layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 34% 66%;
+            gap: 0;
+        }
+
+        /* ===== LEFT COLUMN (Creative sidebar) ===== */
+        .left-panel {
+            background: linear-gradient(160deg, #0b2154, #1f3f8c, #2b4eb5);
+            color: white;
+            padding: 35px 25px;
+            border-right: 5px solid #ffb347;
+        }
+
+        .name-large {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #ffb347;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #ffb347;
+        }
+
+        .info-box {
+            margin: 25px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .info-item i {
+            width: 22px;
+            color: #ffb347;
+            font-size: 1.1rem;
+        }
+
+        .section-title-left {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 3px solid #ffb347;
+            padding-bottom: 5px;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin: 0 8px 12px 0;
+            display: inline-block;
+            border: 1px solid rgba(255,215,0,0.3);
+            transition: 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: #ffb347;
+            color: #0b2154;
+            transform: scale(1.02);
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .lang-name i {
+            color: #ffb347;
+            width: 25px;
+        }
+
+        .lang-level {
+            background: #ffb347;
+            color: #0b2154;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* ===== RIGHT COLUMN (Content) ===== */
+        .right-panel {
+            background: white;
+            padding: 35px 30px;
+        }
+
+        .section-title-right {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b2154;
+            margin: 25px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 8px solid #ffb347;
+            padding-left: 15px;
+        }
+
+        .section-title-right i {
+            color: #ffb347;
+            font-size: 1.8rem;
+        }
+
+        .job-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8fbff;
+            border-radius: 20px;
+            border: 1px solid #eef2ff;
+            transition: 0.2s;
+        }
+
+        .job-block:hover {
+            background: #fff9f0;
+            border-color: #ffb347;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0b2154;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #b45309;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .duration {
+            color: #4b5563;
+            font-style: italic;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: #eef2ff;
+            padding: 4px 16px;
+            border-radius: 30px;
+        }
+
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .custom-list li {
+            margin-bottom: 8px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .custom-list li:before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f0a4";
+            font-weight: 900;
+            color: #ffb347;
+            position: absolute;
+            left: 0;
+        }
+
+        .cert-item {
+            background: #f0f4ff;
+            padding: 12px 18px;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            border-left: 5px solid #ffb347;
+        }
+
+        .highlight-footer {
+            background: linear-gradient(145deg, #fff9e6, #fff2d4);
+            padding: 20px 25px;
+            margin-top: 25px;
+            border-radius: 30px;
+            border: 2px dashed #ffb347;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 15px;
+            background: #0b2154;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-standard-card">
+        <div class="color-stripe"></div>
+        
+        <div class="cv-grid">
+            <!-- LEFT COLUMN (Personal, Skills, Languages) -->
+            <div class="left-panel">
+                <div class="name-large">SUDESH<br>MADUSHANKA</div>
+                <div class="sub-title">
+                    <i class="fas fa-file-signature"></i> Document Control & Admin Professional
+                </div>
+
+                <!-- Contact Info -->
+                <div class="info-box">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ras Al Khaimah, UAE</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+971 56 884 0769</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sudheshmadushanka@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-passport"></i>
+                        <span>UAE Employment Visa</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Immediately Available</span>
+                    </div>
+                </div>
+
+                <!-- Core Competencies (Skills) -->
+                <div class="section-title-left">
+                    <i class="fas fa-cogs"></i> CORE SKILLS
+                </div>
+                <div>
+                    <span class="skill-tag">Document Control</span>
+                    <span class="skill-tag">Records Management</span>
+                    <span class="skill-tag">Filing & Archiving</span>
+                    <span class="skill-tag">Data Entry</span>
+                    <span class="skill-tag">MS Office</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">Correspondence</span>
+                    <span class="skill-tag">Office Coordination</span>
+                    <span class="skill-tag">Compliance</span>
+                    <span class="skill-tag">Time Management</span>
+                </div>
+
+                <!-- Languages -->
+                <div class="section-title-left" style="margin-top: 30px;">
+                    <i class="fas fa-language"></i> LANGUAGES
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name"><i class="fas fa-comment"></i> Sinhala</span>
+                    <span class="lang-level">Native</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name"><i class="fas fa-comment-dots"></i> English</span>
+                    <span class="lang-level">Professional</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name"><i class="fas fa-comment"></i> Tamil</span>
+                    <span class="lang-level">Good (Certified)</span>
+                </div>
+
+                <!-- Personal Details (short) -->
+                <div class="section-title-left" style="margin-top: 30px;">
+                    <i class="fas fa-user"></i> PERSONAL
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-flag"></i> Sri Lankan
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-birthday-cake"></i> 21 Oct 1980
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-heart"></i> Married
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN (Experience, Education, Certifications) -->
+            <div class="right-panel">
+                <!-- Professional Summary -->
+                <div class="section-title-right">
+                    <i class="fas fa-user-tie"></i> SUMMARY
+                </div>
+                <p style="margin-bottom: 25px; line-height: 1.6; background: #f8fbff; padding: 15px; border-radius: 16px;">
+                    Dedicated <strong>Document Controller & Administrative Professional</strong> with <strong>19+ years</strong> of proven expertise at the <strong>Road Development Authority (RDA), Sri Lanka</strong>. Specialist in document management systems, filing, archiving, technical drawings, data entry, compliance, and office coordination in government and construction sectors. Immediately available with valid UAE Employment Visa.
+                </p>
+
+                <!-- PROFESSIONAL EXPERIENCE (RDA only) -->
+                <div class="section-title-right">
+                    <i class="fas fa-briefcase"></i> EXPERIENCE
+                </div>
+
+                <div class="job-block">
+                    <div class="job-title">Administrative Clerk / Document Controller</div>
+                    <div class="company"><i class="fas fa-building"></i> Road Development Authority (RDA) – Sri Lanka</div>
+                    <div class="duration"><i class="far fa-calendar-alt"></i> November 2004 – September 2023 (19 Years)</div>
+                    
+                    <p><strong><i class="fas fa-tasks"></i> Key Responsibilities:</strong></p>
+                    <ul class="custom-list">
+                        <li>Managed comprehensive document control systems for national road development projects</li>
+                        <li>Established and maintained physical and digital filing systems for technical drawings and engineering documents</li>
+                        <li>Handled data entry for multiple databases, registers, and government records</li>
+                        <li>Prepared official correspondence, reports, and government documentation</li>
+                        <li>Coordinated with engineers, supervisors, and government officials</li>
+                        <li>Ensured compliance with government regulations and documentation standards</li>
+                        <li>Managed public inquiries and customer service interactions</li>
+                        <li>Processed an average of 200+ documents daily with zero errors</li>
+                        <li>Maintained confidentiality and security of sensitive documents</li>
+                        <li>Supported transition from paper-based to hybrid digital filing systems</li>
+                    </ul>
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="section-title-right">
+                    <i class="fas fa-graduation-cap"></i> EDUCATION
+                </div>
+                <div class="job-block">
+                    <div class="job-title">G.C.E. Ordinary Level (O/L)</div>
+                    <div class="company">Welimada Central College, Sri Lanka</div>
+                    <div class="duration">Completed: 1997</div>
+                    <p>Buddhism (C), Sinhala Language & Literature (C), Music (C), Metalwork (S), History (S), Mathematics (S)</p>
+                </div>
+
+                <!-- CERTIFICATIONS & TRAINING -->
+                <div class="section-title-right">
+                    <i class="fas fa-certificate"></i> CERTIFICATIONS
+                </div>
+
+                <div class="cert-item">
+                    <strong>National Certificate in Food and Beverage Service (NVQ Level 3)</strong><br>
+                    Vocational Training Authority (VTA), Sri Lanka | July 2023 | Cert No: 10321631
+                </div>
+                <div class="cert-item">
+                    <strong>Certificate Course in Tamil Language (Credit Pass)</strong><br>
+                    Skills Development Fund Ltd, Sri Lanka | July 2011
+                </div>
+                <div class="cert-item">
+                    <strong>Time Management & Productivity Workshop</strong><br>
+                    SANIT International (PVT) Limited | May 2012
+                </div>
+                <div class="cert-item">
+                    <strong>Clerical Officers Training Programme</strong><br>
+                    Road Development Authority (RDA), Sri Lanka | March 2005
+                </div>
+                <div class="cert-item">
+                    <strong>Entrepreneur Development Training on New Business Creation</strong><br>
+                    Vocational Training Authority (VTA), Sri Lanka | Nov–Dec 2003 (ADB Funded)
+                </div>
+
+                <!-- AVAILABILITY HIGHLIGHT -->
+                <div class="highlight-footer">
+                    <i class="fas fa-check-circle" style="font-size: 2.5rem; color: #4CAF50;"></i>
+                    <div>
+                        <h3 style="color: #0b2154;">✅ Immediately Available for Employment</h3>
+                        <p style="margin-top: 5px;">Ready to contribute 19+ years of document control and administrative expertise to a professional organization in the UAE. References available upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-note">
+            <i class="fas fa-file-pdf"></i> Sudesh Madushanka | Document Controller | +971 56 884 0769 | sudeshmadushanka@gmail.com
+        </div>
+    </div>
+
+    <!-- Optional: PDF download script (can be added later if needed) -->
+</body>
+</html>
