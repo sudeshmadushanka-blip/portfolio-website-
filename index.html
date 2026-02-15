@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudesh Madushanka - Professional Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sudesh Madushanka - Administrative Professional</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ===== RESET & BASE STYLES ===== */
         * {
@@ -13,9 +16,9 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            background: linear-gradient(45deg, #f5f5f5 0%, #e6e6e6 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,32 +26,31 @@
             padding: 20px;
             color: #333;
         }
-
-        /* ===== MAIN CONTAINER ===== */
+        
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             width: 100%;
             background: white;
             border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
-            animation: fadeIn 0.8s ease-out;
+            animation: fadeIn 0.8s ease-in-out;
         }
-
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
+        
         /* ===== HEADER SECTION ===== */
         header {
-            background: linear-gradient(135deg, #1a3a8f 0%, #2d5cc2 100%);
+            background: linear-gradient(135deg, #1a3a8f, #0d1b4a);
             color: white;
             padding: 50px 30px 40px;
             position: relative;
         }
-
+        
         header::after {
             content: '';
             position: absolute;
@@ -57,11 +59,11 @@
             transform: translateX(-50%);
             width: 80%;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             filter: blur(10px);
         }
-
+        
         .profile-img {
             width: 180px;
             height: 180px;
@@ -69,177 +71,250 @@
             border: 6px solid white;
             margin: 0 auto 25px;
             object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             display: block;
         }
+       
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+.title {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.availability {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ===== PROFESSIONAL SUMMARY SECTION ===== */
+.professional-summary {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    margin: 20px;
+    border-radius: 20px;
+    border-left: 5px solid #0077b5;
+    text-align: left;
+}
+
+.summary-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.summary-icon {
+    background: #0077b5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.summary-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
         }
+        
+.summary-highlight {
+    background-color: #fff3cd;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
 
-        .title {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
 
-        .availability {
-            background: #4CAF50;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-top: 15px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-            animation: pulse 2s infinite;
-        }
+.stat-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
 
-        /* ===== BUTTONS SECTION ===== */
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 50px 40px;
-            background: #f8f9fa;
-        }
+.stat-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px 25px;
-            background: linear-gradient(135deg, #1a3a8f 0%, #2d5cc2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(26, 58, 143, 0.2);
-            min-height: 80px;
-        }
+.stat-value {
+    font-size: 0.9rem;
+    color: #666;
+}
 
-        .btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(26, 58, 143, 0.3);
-            background: linear-gradient(135deg, #2d5cc2 0%, #3a6ee0 100%);
-        }
+/* ===== BUTTONS SECTION ===== */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 50px 40px;
+    background: #f8f9fa;
+}
 
-        .btn i {
-            font-size: 1.5rem;
-        }
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    min-height: 100px;
+    }
+        
+.btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-        .btn-primary {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
-        }
+.btn i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
 
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
-        }
+/* Individual button colors */
+.btn:nth-child(1) { background: linear-gradient(135deg, #d32f2f, #b71c1c); } /* Professional CV */
+.btn:nth-child(2) { background: linear-gradient(135deg, #1976d2, #0d47a1); } /* Resume */
+.btn:nth-child(3) { background: linear-gradient(135deg, #388e3c, #1b5e20); } /* Standard CV */
+.btn:nth-child(4) { background: linear-gradient(135deg, #28a745, #20c997); } /* Download */
 
-        /* ===== CONTACT INFO ===== */
-        .contact-info {
-            padding: 35px 30px;
-            background: white;
-            border-top: 1px solid #eaeaea;
-        }
+/* ===== CONTACT INFO ===== */
+.contact-info {
+    padding: 35px 30px;
+    background: white;
+    border-top: 1px solid #eaeaea;
+}
 
-        .contact-items {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 25px;
-        }
+.contact-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 25px;
+}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #444;
-            font-size: 1.05rem;
-        }
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #444;
+    font-size: 1.05rem;
+}
 
-        .contact-item i {
-            color: #1a3a8f;
-            font-size: 1.3rem;
-            width: 30px;
-        }
+.contact-item i {
+    color: #1a3a8f;
+    font-size: 1.3rem;
+    width: 30px;
+}
 
-        .contact-item a {
-            color: #444;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.contact-item a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .contact-item a:hover {
-            color: #d32f2f;
-            text-decoration: underline;
-        }
+.contact-item a:hover {
+    color: #d32f2f;
+    text-decoration: underline;
+}
 
-        .visa-badge {
-            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            display: inline-block;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
-            margin-top: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+.visa-badge {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .container {
-                border-radius: 20px;
-            }
-            
-            header {
-                padding: 40px 20px 30px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .buttons {
-                grid-template-columns: 1fr;
-                padding: 40px 25px;
-                gap: 20px;
-            }
-            
-            .btn {
-                padding: 18px 20px;
-            }
-            
-            .contact-items {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-            }
-        }
-
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 20px;
+    }
+    
+    header {
+        padding: 40px 20px 30px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .buttons {
+        grid-template-columns: 1fr;
+        padding: 40px 25px;
+        gap: 20px;
+    }
+    
+    .btn {
+        padding: 18px 20px;
+        min-height: 80px;
+    }
+    
+    .contact-items {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    }
+                
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.8rem;
@@ -251,7 +326,14 @@
             
             .btn {
                 font-size: 1rem;
-                min-height: 70px;
+            }
+            
+            .summary-title {
+                font-size: 1.5rem;
+            }
+            
+            .summary-text {
+                font-size: 1rem;
             }
         }
     </style>
@@ -260,92 +342,74 @@
     <div class="container">
         <!-- HEADER SECTION -->
         <header>
-            <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img" onerror="this.src='https://via.placeholder.com/180x180/1a3a8f/ffffff?text=SM'">
-            <h1>SUDESH MADUSHANKA</h1>
-            <div class="title">Administrative & Document Control Professional</div>
-            <div class="availability">Available for Opportunities</div>
+            <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img">
+            <h1>SUDESH MADUSHANKA SAMARAKOON</h1>
+            <div class="title">Administrative Assistant | Document Controller | Office Clerk</div>
+            <div class="availability">✅ Immediately Available (UAE Employment Visa)</div>
         </header>
-
+        
+        <!-- PROFESSIONAL SUMMARY SECTION -->
+        <section class="professional-summary">
+            <h2 class="summary-title">
+                <span class="summary-icon">📋</span>
+                Professional Summary
+            </h2>
+            
+            <p class="summary-text">
+                Dedicated Administrative Assistant with <strong>5+ years</strong> comprehensive experience in document control, office administration, and client coordination. 
+                Expertise in maintaining accurate records, organizing meetings, and supporting executive-level management. 
+                <span class="summary-highlight">✅ Immediately Available in UAE</span>
+            </p>
+            
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-label">Document Control</div>
+                    <div class="stat-value">2000+ documents managed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-label">Efficiency</div>
+                    <div class="stat-value">30% time saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-label">UAE Visa</div>
+                    <div class="stat-value">Immediate joiner</div>
+                </div>
+            </div>
+        </section>
+        
         <!-- BUTTONS SECTION -->
         <div class="buttons">
             <!-- PROFESSIONAL CV -->
             <a href="cv-portfolio.html" class="btn">
                 <i class="fas fa-file-alt"></i>
-                <div>
-                    <div style="font-weight: bold; font-size: 1.2rem;">Professional CV</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Complete Work Experience</div>
-                </div>
+                <div style="font-weight: 600;">Professional CV</div>
+                <div style="font-size: 0.85rem; opacity: 0.9;">Complete Experience</div>
             </a>
-
-            <!-- RESUME -->
-            <a href="resume.html" class="btn">
-                <i class="fas fa-user-tie"></i>
-                <div>
-                    <div style="font-weight: bold; font-size: 1.2rem;">Resume</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Concise Version</div>
-                </div>
-            </a>
-
-            <!-- STANDARD CV -->
-<a href="cv-standard.html" class="btn">
-    <i class="fas fa-briefcase"></i>
-    <div>
-        <div style="font-weight: bold; font-size: 1.2rem;">Standard CV</div>
-        <div style="font-size: 0.9rem; opacity: 0.9;">Traditional Format</div>
-    </div>
-</a>
-            </a>
-        </div>
-
-        <!-- CONTACT INFORMATION -->
-        <div class="contact-info">
-            <div class="contact-items">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+971568840769">+971 56 884 0769</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Ras Al Khaimah, UAE</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/sudhesh-madushanka-588332284" target="_blank">linkedin.com/in/sudhesh-madushanka-588332284</a>
-                </div>
-            </div>
-            
-            <div class="visa-badge">
-                <i class="fas fa-passport"></i> UAE Employment Visa Holder
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT FOR INTERACTIVITY -->
-    <script>
-        // Add hover effect to buttons
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
-        });
-        
+                    
         // Add click animation
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Don't animate if it's a download link (to avoid interference)
+                if (!this.hasAttribute('download')) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                        // Redirect after animation
+                        window.location.href = this.href;
+                    }, 200);
+                } else {
+                    // For download, just do scale animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                }
             });
         });
-        
-        // Console welcome message
-        console.log('🎯 Sudesh Madushanka Portfolio | Available for Opportunities');
-        console.log('📱 Contact: +971 56 884 0769 | Email: sudeshmadushanka@gmail.com');
     </script>
 </body>
-    </html>
+        </html>
