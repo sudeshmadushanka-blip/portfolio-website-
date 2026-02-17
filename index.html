@@ -3,259 +3,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudesh Madushanka</title>
+  <title>Sudesh Madushanka | Portfolio</title>
 
-  <!-- Font Awesome (icons) -->
+  <!-- Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
+    :root{
+      --bg1:#071a3a;
+      --bg2:#0b2a5a;
+      --card:#0c234a;
+      --card2:#0a1d3f;
+      --text:#eef4ff;
+      --muted:#b7c7e6;
+      --accent:#2bd3ff;
+      --green:#32c766;
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
     body{
-      font-family: Arial, Helvetica, sans-serif;
       margin:0;
-      background:#0b1220;
-      color:#e8eefc;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 20% 10%, #163a7a 0%, transparent 55%),
+                  radial-gradient(900px 650px at 90% 10%, #0a6aa8 0%, transparent 55%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
     }
-    .container{
-      max-width:900px;
-      margin:0 auto;
-      padding:24px 16px 60px;
+
+    .wrap{
+      width:min(980px, 92vw);
+      margin: 28px auto 36px;
     }
-    .card{
-      background:#111a2d;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:14px;
-      padding:18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
-    .header{
+
+    .heroTop{
+      padding: 26px 22px 18px;
       display:flex;
-      flex-wrap:wrap;
+      gap:18px;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      margin-bottom:12px;
+      flex-wrap:wrap;
     }
+
+    .profile{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .avatar{
+      width:86px;
+      height:86px;
+      border-radius:50%;
+      border:4px solid rgba(255,255,255,.35);
+      overflow:hidden;
+      flex: 0 0 auto;
+      background: rgba(255,255,255,.06);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
     h1{
-      font-size:28px;
       margin:0;
-      letter-spacing:0.2px;
+      font-size: clamp(24px, 4.6vw, 38px);
+      letter-spacing:.3px;
+      line-height:1.15;
     }
     .subtitle{
-      opacity:0.85;
       margin-top:6px;
-      line-height:1.4;
+      color: var(--muted);
+      font-size: clamp(13px, 2.8vw, 16px);
     }
 
-    /* Buttons */
-    .buttons{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:12px;
-      margin:16px 0 6px;
-    }
-    @media (max-width:720px){
-      .buttons{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width:420px){
-      .buttons{ grid-template-columns: 1fr; }
-    }
-    .btn{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      text-decoration:none;
-      color:#e8eefc;
-      background:#0f1830;
-      border:1px solid rgba(255,255,255,0.08);
-      padding:12px 12px;
-      border-radius:12px;
-      transition: transform .08s ease, background .2s ease;
-    }
-    .btn:hover{ background:#142041; }
-    .btn:active{ transform: scale(0.99); }
-    .btn i{
-      font-size:18px;
-      margin-top:2px;
-      opacity:0.95;
-    }
-    .btn-title{
-      font-weight:700;
-      margin:0;
-      line-height:1.2;
-    }
-    .btn-sub{
-      font-size:0.86rem;
-      opacity:0.85;
-      margin-top:4px;
-      line-height:1.2;
-    }
-
-    /* Contact */
-    .contact{
-      margin-top:14px;
-      display:grid;
-      gap:10px;
-    }
-    .contact-item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      background:#0f1830;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:12px;
-      padding:10px 12px;
-    }
-    .contact-item i{
-      width:22px;
-      text-align:center;
-      opacity:0.95;
-    }
-    .contact-item a{
-      color:#e8eefc;
-      text-decoration:none;
-      word-break:break-all;
-      flex:1;
-    }
-
-    /* Copy button styles */
-    .copy-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-      margin-left: 6px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      transition: background 0.2s;
-      color:#e8eefc;
-    }
-    .copy-btn:hover { background: rgba(255,255,255,0.08); }
-    .copy-btn:active { transform: scale(0.95); }
-
-    /* Tooltip for copied message */
-    .copy-tooltip {
-      position: fixed;
-      background: #333;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.95;
-    }
-
-    .visa-badge{
-      margin-top:16px;
+    .badge{
       display:inline-flex;
-      gap:10px;
       align-items:center;
-      padding:10px 12px;
-      border-radius:999px;
-      background:#0f1830;
-      border:1px solid rgba(255,255,255,0.08);
-      opacity:0.95;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(50,199,102,.15);
+      border: 1px solid rgba(50,199,102,.35);
+      color:#dfffe9;
+      font-weight: 700;
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .badge i{color: var(--green)}
+
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 0 0 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      padding: 0 22px 22px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr;}
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.18));
+      border:1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .panelTitle{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 10px;
+      font-weight: 900;
+      letter-spacing:.2px;
+    }
+    .panelTitle i{color: var(--accent)}
+
+    .btns{
+      display:grid;
+      gap: 12px;
+    }
+
+    .btn{
+      text-decoration:none;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(43,211,255,.35);
+      background: linear-gradient(180deg, rgba(43,211,255,.10), rgba(255,255,255,.03));
+    }
+    .btnIcon{
+      width:42px;height:42px;
+      border-radius: 12px;
+      display:grid;place-items:center;
+      background: rgba(43,211,255,.14);
+      border:1px solid rgba(43,211,255,.25);
+      flex:0 0 auto;
+    }
+    .btnIcon i{font-size:18px;color:var(--accent)}
+    .btnText{display:flex;flex-direction:column;gap:3px}
+    .btnText b{font-size:16px}
+    .btnText span{font-size:13px;color:var(--muted)}
+
+    .contactList{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .chip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+    }
+    .chipLeft{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .chipLeft i{
+      width:34px;height:34px;border-radius: 12px;
+      display:grid;place-items:center;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      color:#fff;
+      flex:0 0 auto;
+    }
+    .chip a, .chip span{
+      color: var(--text);
+      text-decoration:none;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width: 52ch;
+      font-size: 14px;
+    }
+    .copyBtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 8px 10px;
+      font-weight: 800;
+      cursor:pointer;
+      transition: .12s ease;
+      flex:0 0 auto;
+    }
+    .copyBtn:hover{border-color: rgba(255,255,255,.30); transform: translateY(-1px);}
+
+    .note{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer{
+      margin-top: 14px;
+      text-align:center;
+      color: rgba(255,255,255,.70);
+      font-size: 13px;
+    }
+    footer .mini{
+      margin-top:6px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
+
+    /* toast */
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.72);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events:none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 9999;
+    }
+    .toast.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(-3px);
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="card">
-
-      <div class="header">
-        <div>
-          <h1>Sudesh Madushanka</h1>
-          <div class="subtitle">
-            Administrative / Office Support • UAE<br/>
-            19+ years experience • Available for opportunities
+  <div class="wrap">
+    <div class="hero">
+      <div class="heroTop">
+        <div class="profile">
+          <div class="avatar">
+            <!-- Your photo file name in repo: sudesh.png -->
+            <img src="sudesh.png" alt="Sudesh Madushanka" onerror="this.style.display='none';" />
           </div>
+
+          <div>
+            <h1>Sudesh Madushanka Samarakoon</h1>
+            <div class="subtitle">
+              Administrative Assistant • Document Controller • Office Clerk • UAE
+            </div>
+          </div>
+        </div>
+
+        <div class="badge">
+          <i class="fa-solid fa-circle-check"></i>
+          Immediately Available (UAE Employment Visa)
         </div>
       </div>
 
-      <!-- BUTTONS SECTION -->
-      <div class="buttons">
-        <!-- PROFESSIONAL CV -->
-        <a href="cv-portfolio.html" class="btn">
-          <i class="fas fa-file-alt"></i>
-          <div>
-            <div class="btn-title">Professional CV</div>
-            <div class="btn-sub">Full detailed CV</div>
-          </div>
-        </a>
+      <div class="divider"></div>
 
-        <!-- RESUME (SHORT) -->
-        <a href="resume.html" class="btn">
-          <i class="fas fa-user-tie"></i>
-          <div>
-            <div class="btn-title">Resume (Short)</div>
-            <div class="btn-sub">Quick overview</div>
-          </div>
-        </a>
+      <div class="grid">
+        <!-- LEFT: Main Links -->
+        <div class="panel">
+          <div class="panelTitle"><i class="fa-solid fa-grid-2"></i> Quick Access</div>
+          <div class="btns">
+            <a class="btn" href="cv-portfolio.html">
+              <div class="btnIcon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="btnText">
+                <b>Professional CV</b>
+                <span>Full detailed CV (creative format)</span>
+              </div>
+            </a>
 
-        <!-- CERTIFICATES / DOCUMENTS -->
-        <a href="certificates.html" class="btn">
-          <i class="fas fa-certificate"></i>
-          <div>
-            <div class="btn-title">Certificates</div>
-            <div class="btn-sub">View supporting docs</div>
-          </div>
-        </a>
-      </div>
+            <a class="btn" href="resume.html">
+              <div class="btnIcon"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="btnText">
+                <b>Resume (Short)</b>
+                <span>Quick overview for recruiters</span>
+              </div>
+            </a>
 
-      <!-- CONTACT -->
-      <div class="contact">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
-          <button class="copy-btn" onclick="copyText('sudheshmadushanka@gmail.com', this)" title="Copy email">📋</button>
+            <a class="btn" href="certificates.html">
+              <div class="btnIcon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="btnText">
+                <b>Certificates</b>
+                <span>Supporting documents</span>
+              </div>
+            </a>
+
+            <!-- Optional: If you use cv-standard.html -->
+            <a class="btn" href="cv-standard.html">
+              <div class="btnIcon"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="btnText">
+                <b>CV (Standard)</b>
+                <span>Simple ATS-friendly version</span>
+              </div>
+            </a>
+          </div>
+
+          <p class="note">
+            Tip: If any button is not opening, file name එක repo එකේ exactly එකමද (capital letters / dash / spelling) කියලා බලන්න.
+          </p>
         </div>
 
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/sudesh-madushanka" target="_blank" rel="noopener">
-            https://www.linkedin.com/in/sudesh-madushanka
-          </a>
-          <button class="copy-btn" onclick="copyText('https://www.linkedin.com/in/sudesh-madushanka', this)" title="Copy LinkedIn">📋</button>
+        <!-- RIGHT: Contact -->
+        <div class="panel">
+          <div class="panelTitle"><i class="fa-solid fa-address-card"></i> Contact</div>
+
+          <div class="contactList">
+            <div class="chip">
+              <div class="chipLeft">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+971568840769">+971 56 884 0769</a>
+              </div>
+              <button class="copyBtn" onclick="copyText('+971568840769')">Copy</button>
+            </div>
+
+            <div class="chip">
+              <div class="chipLeft">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
+              </div>
+              <button class="copyBtn" onclick="copyText('sudheshmadushanka@gmail.com')">Copy</button>
+            </div>
+
+            <div class="chip">
+              <div class="chipLeft">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/sudesh-madushanka">
+                  https://www.linkedin.com/in/sudesh-madushanka
+                </a>
+              </div>
+              <button class="copyBtn" onclick="copyText('https://www.linkedin.com/in/sudesh-madushanka')">Copy</button>
+            </div>
+
+            <div class="chip">
+              <div class="chipLeft">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Ras Al Khaimah, UAE</span>
+              </div>
+              <button class="copyBtn" onclick="copyText('Ras Al Khaimah, UAE')">Copy</button>
+            </div>
+          </div>
+
+          <p class="note">
+            References available upon request • RDA senior officials
+          </p>
         </div>
       </div>
-
-      <div class="visa-badge">
-        <i class="fas fa-passport"></i> UAE Employment Visa - Immediately Available
-      </div>
-
     </div>
+
+    <footer>
+      © 2026 Sudesh Madushanka Samarakoon • Creative CV Portfolio
+      <div class="mini">Built for GitHub Pages</div>
+    </footer>
   </div>
 
+  <div id="toast" class="toast">Copied!</div>
+
   <script>
-    function copyText(text, button) {
-      // Copy to clipboard
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text);
-      } else {
-        // Fallback
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
-      }
-
-      // Tooltip
-      const tooltip = document.createElement("div");
-      tooltip.className = "copy-tooltip";
-      tooltip.innerText = "Copied!";
-      document.body.appendChild(tooltip);
-
-      const rect = button.getBoundingClientRect();
-      tooltip.style.left = (rect.left + rect.width / 2 - 30) + "px";
-      tooltip.style.top = (rect.top - 35) + "px";
-
-      setTimeout(() => tooltip.remove(), 900);
+    function copyText(text){
+      navigator.clipboard.writeText(text).then(()=>{
+        const t = document.getElementById('toast');
+        t.textContent = "Copied: " + text;
+        t.classList.add('show');
+        setTimeout(()=>t.classList.remove('show'), 1400);
+      }).catch(()=>{
+        alert("Copy failed. Please copy manually: " + text);
+      });
     }
   </script>
 </body>
