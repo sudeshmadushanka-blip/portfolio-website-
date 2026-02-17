@@ -1,505 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudesh Madushanka</title>
 
-    <title>Sudesh Madushanka - Document Controller | Administrative Professional</title>
-    <meta name="description" content="Sudesh Madushanka – 19+ years experienced Document Controller and Administrative Professional with UAE Employment Visa. Immediate joiner based in Ras Al Khaimah.">
-    <meta name="keywords" content="Document Controller UAE, Administrative Assistant UAE, Office Clerk UAE, Records Management, Document Control Specialist, Document Tracking, Archiving">
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      margin:0;
+      background:#0b1220;
+      color:#e8eefc;
+    }
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:24px 16px 60px;
+    }
+    .card{
+      background:#111a2d;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+    .header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    h1{
+      font-size:28px;
+      margin:0;
+      letter-spacing:0.2px;
+    }
+    .subtitle{
+      opacity:0.85;
+      margin-top:6px;
+      line-height:1.4;
+    }
 
-    <style>
-        /* ===== RESET & BASE STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    /* Buttons */
+    .buttons{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin:16px 0 6px;
+    }
+    @media (max-width:720px){
+      .buttons{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width:420px){
+      .buttons{ grid-template-columns: 1fr; }
+    }
+    .btn{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      text-decoration:none;
+      color:#e8eefc;
+      background:#0f1830;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:12px 12px;
+      border-radius:12px;
+      transition: transform .08s ease, background .2s ease;
+    }
+    .btn:hover{ background:#142041; }
+    .btn:active{ transform: scale(0.99); }
+    .btn i{
+      font-size:18px;
+      margin-top:2px;
+      opacity:0.95;
+    }
+    .btn-title{
+      font-weight:700;
+      margin:0;
+      line-height:1.2;
+    }
+    .btn-sub{
+      font-size:0.86rem;
+      opacity:0.85;
+      margin-top:4px;
+      line-height:1.2;
+    }
 
-        body {
-            background: linear-gradient(45deg, #f5f5f5 0%, #e6e6e6 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #333;
-        }
+    /* Contact */
+    .contact{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#0f1830;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:10px 12px;
+    }
+    .contact-item i{
+      width:22px;
+      text-align:center;
+      opacity:0.95;
+    }
+    .contact-item a{
+      color:#e8eefc;
+      text-decoration:none;
+      word-break:break-all;
+      flex:1;
+    }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            background: white;
-            border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-       @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* Copy button styles */
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.2s;
+      color:#e8eefc;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.08); }
+    .copy-btn:active { transform: scale(0.95); }
 
-        /* ===== HEADER SECTION ===== */
-        header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            padding: 50px 30px 40px;
-            position: relative;
-        }
+    /* Tooltip for copied message */
+    .copy-tooltip {
+      position: fixed;
+      background: #333;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.95;
+    }
 
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            filter: blur(10px);
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 6px solid white;
-            margin: 0 auto 25px;
-            object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            display: block;
-        }
-
-        h1 {
-            font-size: 2.6rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 18px;
-            font-weight: 400;
-            line-height: 1.4;
-            }
-       .availability {
-            background: #2E7D32;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        /* ===== PROFESSIONAL SUMMARY SECTION ===== */
-        .professional-summary {
-            padding: 34px 20px;
-            background-color: #f8f9fa;
-            margin: 20px;
-            border-radius: 20px;
-            border-left: 5px solid #0077b5;
-            text-align: left;
-        }
-
-        .summary-title {
-            font-size: 1.7rem;
-            color: #333;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .summary-icon {
-            background: #0077b5;
-            color: white;
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 15px;
-            font-size: 18px;
-        }
-
-        .summary-text {
-            font-size: 1.05rem;
-            line-height: 1.65;
-            color: #555;
-            margin-bottom: 18px;
-           }
-        .summary-highlight {
-            background-color: #fff3cd;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 6px;
-        }
-
-        .summary-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .stat-icon {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .stat-value {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* ===== CORE COMPETENCIES LIST ===== */
-        .skills-list {
-            margin-top: 10px;
-            padding-left: 18px;
-            line-height: 1.8;
-            color: #555;
-            font-size: 1.02rem;
-        }
-
-        /* ===== BUTTONS SECTION ===== */
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 50px 40px;
-            background: #f8f9fa;
-        }
-       .btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 25px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            min-height: 100px;
-        }
-
-        .btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn i {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        /* Individual button colors */
-        .btn:nth-child(1) { background: linear-gradient(135deg, #d32f2f, #b71c1c); }
-        .btn:nth-child(2) { background: linear-gradient(135deg, #1976d2, #0d47a1); }
-        .btn:nth-child(3) { background: linear-gradient(135deg, #388e3c, #1b5e20); }
-        .btn:nth-child(4) { background: linear-gradient(135deg, #28a745, #20c997); }
-
-        /* ===== CONTACT INFO ===== */
-        .contact-info {
-            padding: 35px 30px;
-            background: white;
-            border-top: 1px solid #eaeaea;
-        }
-
-        .contact-items {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #444;
-            font-size: 1.05rem;
-                                                        }
-        .contact-item i {
-            color: #0f2027;
-            font-size: 1.3rem;
-            width: 30px;
-        }
-
-        .contact-item a {
-            color: #444;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #d32f2f;
-            text-decoration: underline;
-        }
-
-        .visa-badge {
-            background: linear-gradient(135deg, #2E7D32, #1B5E20);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .container { border-radius: 20px; }
-            header { padding: 40px 20px 30px; }
-            h1 { font-size: 2.1rem; }
-            .profile-img { width: 150px; height: 150px; }
-            .buttons { grid-template-columns: 1fr; padding: 40px 25px; gap: 20px; }
-            .btn { padding: 18px 20px; min-height: 80px; }
-            .contact-items { flex-direction: column; gap: 20px; align-items: center; }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.75rem; }
-            .title { font-size: 1.05rem; }
-            .btn { font-size: 1rem; }
-            .summary-title { font-size: 1.45rem; }
-            .summary-text { font-size: 1rem; }
-        }
-    </style>
+    .visa-badge{
+      margin-top:16px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      background:#0f1830;
+      border:1px solid rgba(255,255,255,0.08);
+      opacity:0.95;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- HEADER SECTION -->
-        <header>
-            <img src="sudesh.png" alt="Sudesh Madushanka" class="profile-img">
-            <h1>SUDESH MADUSHANKA SAMARAKOON</h1>
-            <div class="title">Document Controller | Administrative Assistant | 19+ Years Government Experience</div>
-            <div class="availability">✔ UAE Employment Visa | Immediate Joiner</div>
-        </header>
+  <div class="container">
+    <div class="card">
 
-        <!-- PROFESSIONAL SUMMARY SECTION -->
-        <section class="professional-summary">
-            <h2 class="summary-title">
-                <span class="summary-icon">📋</span>
-                Professional Summary
-            </h2>
-
-            <p class="summary-text">
-                Document Control and Administrative Professional with over <strong>19 years of proven government sector experience</strong> at the Road Development Authority (Sri Lanka).
-                Specialized in documentation systems, records management, filing control, compliance monitoring, and office coordination.
-                Demonstrated ability to manage high-volume document workflows, maintain strict regulatory standards, and support engineering and administrative departments efficiently.
-                <span class="summary-highlight">UAE Employment Visa – Immediate Joiner</span>
-            </p>
-
-            <div class="summary-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">📁</div>
-                    <div class="stat-label">Experience</div>
-                    <div class="stat-value">19+ Years Government Service</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📑</div>
-                    <div class="stat-label">Specialization</div>
-                    <div class="stat-value">Document Control & Records Management</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🌍</div>
-                    <div class="stat-label">Location</div>
-                    <div class="stat-value">Ras Al Khaimah, UAE</div>
-                </div>
-            </div>
-        </section>
-        <!-- CORE COMPETENCIES -->
-        <section class="professional-summary">
-            <h2 class="summary-title">
-                <span class="summary-icon">✔</span>
-                Core Competencies
-            </h2>
-
-            <ul class="skills-list">
-                <li>Document Control, Tracking & Registers</li>
-                <li>Filing Systems, Archiving & Retrieval</li>
-                <li>Records Retention & Compliance Monitoring</li>
-                <li>Technical Documentation Handling (Engineering/Project Files)</li>
-                <li>Data Entry & Database/Log Management</li>
-                <li>Report Preparation & Official Correspondence</li>
-                <li>Office Administration & Coordination</li>
-                <li>MS Word & Excel Proficiency</li>
-            </ul>
-        </section>
-
-        <!-- BUTTONS SECTION -->
-        <div class="buttons">
-            <a href="cv-portfolio.html" class="btn">
-                <i class="fas fa-file-alt"></i>
-                <div style="font-weight: 600;">Professional CV</div>
-                <div style="font-size: 0.85rem; opacity: 0.9;">Complete Experience</div>
-            </a>
-
-            <a href="resume.html" class="btn">
-                <i class="fas fa-user-tie"></i>
-                <div style="font-weight: 600;">Resume</div>
-                <div style="font-size: 0.85rem; opacity: 0.9;">Concise Versio
-            </a><!-- BUTTONS SECTION -->
-<div class="buttons">
-    <!-- PROFESSIONAL CV -->
-    <a href="cv-portfolio.html" class="btn">
-        <i class="fas fa-file-alt"></i>
-        <div style="font-weight: 600;">Professional CV</div>
-        <div style="font-size: 0.85rem; opacity: 0.9;">Detailed Experience</div>
-    </a>
-
-    <!-- RESUME (SHORT) -->
-    <a href="resume.html" class="btn">
-        <i class="fas fa-user-tie"></i>
-        <div style="font-weight: 600;">Resume (Short)</div>
-        <div style="font-size: 0.85rem; opacity: 0.9;">Quick Overview</div>
-    </a>
-
-    <!-- CERTIFICATES / DOCUMENTS -->
-    <a href="certificates.html" class="btn">
-        <i class="fas fa-certificate"></i>
-        <div style="font-weight: 600;">Certificates</div>
-        <div style="font-size: 0.85rem; opacity: 0.9;">View Supporting Docs</div>
-    <div class="buttons">
-</div>
-
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
-                    <button class="copy-btn" onclick="copyText('sudheshmadushanka@gmail.com', this)">📋</button>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/sudesh-madushanka" target="_blank" rel="noopener">LinkedIn Profile</a>
-                    <button class="copy-btn" onclick="copyText('https://www.linkedin.com/in/sudesh-madushanka', this)">📋</button>
-                </div>
-            </div>
-
-            <div class="visa-badge">
-                <i class="fas fa-passport"></i> UAE Employment Visa - Immediately Available
-            </div>
+      <div class="header">
+        <div>
+          <h1>Sudesh Madushanka</h1>
+          <div class="subtitle">
+            Administrative / Office Support • UAE<br/>
+            19+ years experience • Available for opportunities
+          </div>
         </div>
+      </div>
+
+      <!-- BUTTONS SECTION -->
+      <div class="buttons">
+        <!-- PROFESSIONAL CV -->
+        <a href="cv-portfolio.html" class="btn">
+          <i class="fas fa-file-alt"></i>
+          <div>
+            <div class="btn-title">Professional CV</div>
+            <div class="btn-sub">Full detailed CV</div>
+          </div>
+        </a>
+
+        <!-- RESUME (SHORT) -->
+        <a href="resume.html" class="btn">
+          <i class="fas fa-user-tie"></i>
+          <div>
+            <div class="btn-title">Resume (Short)</div>
+            <div class="btn-sub">Quick overview</div>
+          </div>
+        </a>
+
+        <!-- CERTIFICATES / DOCUMENTS -->
+        <a href="certificates.html" class="btn">
+          <i class="fas fa-certificate"></i>
+          <div>
+            <div class="btn-title">Certificates</div>
+            <div class="btn-sub">View supporting docs</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="contact">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:sudheshmadushanka@gmail.com">sudheshmadushanka@gmail.com</a>
+          <button class="copy-btn" onclick="copyText('sudheshmadushanka@gmail.com', this)" title="Copy email">📋</button>
+        </div>
+
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/sudesh-madushanka" target="_blank" rel="noopener">
+            https://www.linkedin.com/in/sudesh-madushanka
+          </a>
+          <button class="copy-btn" onclick="copyText('https://www.linkedin.com/in/sudesh-madushanka', this)" title="Copy LinkedIn">📋</button>
+        </div>
+      </div>
+
+      <div class="visa-badge">
+        <i class="fas fa-passport"></i> UAE Employment Visa - Immediately Available
+      </div>
+
     </div>
+  </div>
 
-    <style>
-        /* Copy button styles */
-        .copy-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin-left: 8px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        .copy-btn:hover {
-            background: rgba(0,0,0,0.1);
-        }
-        .copy-btn:active {
-            transform: scale(0.9);
-        }
-        /* Tooltip for copied message */
-        .copy-tooltip {
-            position: fixed;
-            background: #333;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            pointer-events: none;
-            z-index: 1000;
-        }
-    </style>
-    <script>
-        function copyText(text, btnElement) {
-            navigator.clipboard.writeText(text).then(() => {
-                const tooltip = document.createElement('span');
-                tooltip.className = 'copy-tooltip';
-                tooltip.innerText = 'Copied!';
-                document.body.appendChild(tooltip);
+  <script>
+    function copyText(text, button) {
+      // Copy to clipboard
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text);
+      } else {
+        // Fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
 
-                const rect = btnElement.getBoundingClientRect();
-                tooltip.style.left = rect.left + window.scrollX + 'px';
-                tooltip.style.top = (rect.top + window.scrollY - 30) + 'px';
+      // Tooltip
+      const tooltip = document.createElement("div");
+      tooltip.className = "copy-tooltip";
+      tooltip.innerText = "Copied!";
+      document.body.appendChild(tooltip);
 
-                setTimeout(() => {
-                    tooltip.remove();
-                }, 1500);
-            }).catch(() => {
-                alert('Copy failed, please copy manually.');
-            });
-        }
+      const rect = button.getBoundingClientRect();
+      tooltip.style.left = (rect.left + rect.width / 2 - 30) + "px";
+      tooltip.style.top = (rect.top - 35) + "px";
 
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
-            btn.addEventListener('mouseleave', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
-        });
-
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (!this.hasAttribute('download')) {
-                    e.preventDefault();
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                        window.location.href = this.href;
-                    }, 200);
-                } else {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 200);
-                }
-            });
-        });
-    </script>
+      setTimeout(() => tooltip.remove(), 900);
+    }
+  </script>
 </body>
 </html>
